@@ -1,0 +1,45 @@
+# First-edition validation
+
+**Review date:** 23 November 2026 · **Reference:** RxJS 7.8.2 · **Runtime:** Node.js v24.22.3
+
+The first edition contains 14 worked cards. The review combined inspection of the pinned RxJS implementation with 24 executable scenarios using `VirtualTimeScheduler` and assertions on observed values, terminal notifications, and selected connection lifetimes.
+
+All 24 scenarios passed. These were focused checks performed while preparing the collection, not a claim of an exhaustive or repository-installed automated test suite.
+
+## Executed scenarios
+
+| Area | Scenarios | What was checked |
+| --- | --- | --- |
+| Value transformation and selection | 2 | `map` doubles each input in order; `filter` forwards only the odd inputs. |
+| Accumulation | 4 | Seeded `scan` publishes running sums; seeded `reduce` publishes the final sum; empty input emits no `scan` seed but does emit the `reduce` seed. |
+| Count and notifier boundaries | 4 | `take(2)` closes after its second output; `take(0)` never connects upstream; `takeUntil` closes on a notifier value; a synchronous notifier value can prevent source subscription. |
+| Grouping | 3 | `buffer` publishes arrays and flushes at completion; `window` publishes its initial live stream and routes values between boundaries; outer window closure does not complete an independently held inner subscription, and a later subscription to the disposed window throws. |
+| Inner-stream coordination | 4 | The common two-input trace distinguishes overlapping `mergeMap`, queued `concatMap`, replacing `switchMap`, and busy-gated `exhaustMap`; projection admission times are asserted. |
+| Timing | 4 | `debounceTime` releases after a quiet interval, flushes on normal completion, discards on error, and cancels pending delivery on consumer closure. |
+| Sharing and replay | 3 | Concurrent observers share one connection and retain a completed cache; the last observer leaving an unfinished source resets it; source error allows a fresh execution. |
+| **Total** | **24** | **All passed against RxJS 7.8.2.** |
+
+The sources used scheduled events relative to subscription. Their teardown canceled outstanding scheduled actions. Event order was explicit, including an inner's value before its completion at the same virtual time. The checks did not use real-time waiting.
+
+## Source review
+
+Each card identifies its scope and links the official documentation and version-pinned implementation. Shared helpers were inspected where behavior depends on accumulation, inner admission, error handling, or replay reset. Particular attention went to:
+
+- The different emission policies of seeded `scan` and `reduce`.
+- Notifier `next` versus notifier completion, and source/notifier subscription order.
+- Live window ownership and the difference between completion and disposal.
+- Projection admission and cancellation ordering in the four flattening policies.
+- Completion flushing and scheduled-action reuse in `debounceTime`.
+- Replay retention, reference counting, and error reset in `shareReplay`.
+
+The [reference list](references.md) links these implementation helpers. The notation and design received a separate consistency review, including preservation of nested streams and the distinction between local and whole-stream cardinality.
+
+## Documentation checks
+
+The collection was checked for the ten required card sections, balanced fenced code blocks, resolvable relative file links, and agreement between the 14 card files and the operator index. Template placeholders belong only in the reusable template.
+
+## Limits of this validation
+
+The checks cover the selected scopes and illustrative scenarios. They do not establish formal equivalence, complete overload coverage, arbitrary scheduler/reentrancy behavior, or compatibility with another RxJS version. Verification obligations in individual cards also describe useful future cases; their presence does not mean every obligation has already been executed.
+
+See the [operator index](operator-index.md), [writing contract](card-writing-contract.md), and [coverage roadmap](roadmap.md).
