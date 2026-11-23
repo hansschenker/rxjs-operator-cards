@@ -20,14 +20,18 @@ This repository preserves the operator-card idea developed in our discussion of 
 2. Open the [operator index](docs/operator-index.md) and compare related cards.
 3. Use the [card template](templates/operator-card.md) to document another operator.
 4. Read the [design](docs/operator-card-design.md) and [writing contract](docs/card-writing-contract.md) when extending the collection.
+5. Follow the [eight-session plan](docs/session-plan.md) to complete the pinned operator inventory in batches of 15.
 
-The first edition contains **14 worked cards**. A card for every supported operator is the direction for the collection; the [roadmap](docs/roadmap.md) identifies the remaining work. This edition does not claim complete RxJS API coverage.
+**Session 1 is complete: 15 worked cards.** The collection began with 14 cards, and `startWith` completes today's batch. The [session plan](docs/session-plan.md) assigns all **113 operator source files** from the audited RxJS 7.x directory: seven sessions of 15 and a final session of eight. **98 cards remain planned.** Session 2 is next, on **24 November 2026**.
 
-## The first cards
+The first six sessions cover 90 current operator files; the final two cover 23 deprecated forms. Four internal helpers are recorded separately. This is coverage of the pinned operators directory, including its aliases and compatibility forms; creation functions and other RxJS APIs have their own scope.
+
+## Session 1 cards
 
 | Family | Cards |
 | --- | --- |
 | Value transformation and selection | [map](cards/map.md), [filter](cards/filter.md) |
+| Starting values | [startWith](cards/startWith.md) |
 | Remembered state and aggregation | [scan](cards/scan.md), [reduce](cards/reduce.md) |
 | Count and notifier boundaries | [take](cards/take.md), [takeUntil](cards/takeUntil.md) |
 | Grouping | [buffer](cards/buffer.md), [window](cards/window.md) |
@@ -109,7 +113,7 @@ No build step is needed. The cards are Markdown documents readable directly on G
 
 ## Extending the collection
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), the [template](templates/operator-card.md), and the [roadmap](docs/roadmap.md). Keep teaching language accessible and support precise claims with source references and traces.
+See [CONTRIBUTING.md](CONTRIBUTING.md), the [template](templates/operator-card.md), and the [session plan](docs/session-plan.md). The [session manifest](planning/operator-sessions.json) records assigned and completed operators; the [source inventory](planning/source-inventory.json) pins the upstream files. Keep teaching language accessible and support precise claims with source references and traces.
 
 ## Credits and sources
 

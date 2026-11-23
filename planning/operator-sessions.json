@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "title": "RxJS operator-card sessions",
+  "timezone": "Europe/Zurich",
+  "sessionSize": 15,
+  "startDate": "2026-11-23",
+  "cadence": "Proposed one session per calendar day; target dates do not themselves schedule execution.",
+  "cardReferenceVersion": "7.8.2",
+  "sourceInventory": "source-inventory.json",
+  "countingUnit": "One card per operator source file; onErrorResumeNext is an explicit alias section in onErrorResumeNextWith.",
+  "totalOperatorCards": 113,
+  "additionalPublicAliases": [
+    {
+      "name": "onErrorResumeNext",
+      "entryPoint": "rxjs/operators",
+      "cardOperator": "onErrorResumeNextWith",
+      "session": 6,
+      "deprecated": true
+    }
+  ],
+  "excludedHelperFiles": [
+    "OperatorSubscriber.ts",
+    "joinAllInternals.ts",
+    "mergeInternals.ts",
+    "scanInternals.ts"
+  ],
+  "sessions": [
+    {
+      "number": 1,
+      "plannedDate": "2026-11-23",
+      "theme": "Core behavior and state",
+      "status": "complete",
+      "operators": [
+        "map",
+        "filter",
+        "scan",
+        "reduce",
+        "take",
+        "takeUntil",
+        "buffer",
+        "window",
+        "debounceTime",
+        "mergeMap",
+        "concatMap",
+        "switchMap",
+        "exhaustMap",
+        "shareReplay",
+        "startWith"
+      ],
+      "completedOperators": [
+        "map",
+        "filter",
+        "scan",
+        "reduce",
+        "take",
+        "takeUntil",
+        "buffer",
+        "window",
+        "debounceTime",
+        "mergeMap",
+        "concatMap",
+        "switchMap",
+        "exhaustMap",
+        "shareReplay",
+        "startWith"
+      ]
+    },
+    {
+      "number": 2,
+      "plannedDate": "2026-11-24",
+      "theme": "Selection, boundaries, and distinct values",
+      "status": "planned",
+      "operators": [
+        "skip",
+        "takeLast",
+        "skipLast",
+        "takeWhile",
+        "skipWhile",
+        "skipUntil",
+        "first",
+        "last",
+        "single",
+        "elementAt",
+        "find",
+        "findIndex",
+        "distinct",
+        "distinctUntilChanged",
+        "distinctUntilKeyChanged"
+      ],
+      "completedOperators": []
+    },
+    {
+      "number": 3,
+      "plannedDate": "2026-11-25",
+      "theme": "Time, scheduling, and delivery boundaries",
+      "status": "planned",
+      "operators": [
+        "debounce",
+        "throttle",
+        "throttleTime",
+        "audit",
+        "auditTime",
+        "sample",
+        "sampleTime",
+        "delay",
+        "delayWhen",
+        "timeout",
+        "timestamp",
+        "timeInterval",
+        "observeOn",
+        "subscribeOn",
+        "endWith"
+      ],
+      "completedOperators": []
+    },
+    {
+      "number": 4,
+      "plannedDate": "2026-11-26",
+      "theme": "Grouping, aggregation, and sequence comparison",
+      "status": "planned",
+      "operators": [
+        "bufferCount",
+        "windowCount",
+        "bufferTime",
+        "windowTime",
+        "bufferToggle",
+        "windowToggle",
+        "bufferWhen",
+        "windowWhen",
+        "groupBy",
+        "pairwise",
+        "toArray",
+        "count",
+        "min",
+        "max",
+        "sequenceEqual"
+      ],
+      "completedOperators": []
+    },
+    {
+      "number": 5,
+      "plannedDate": "2026-11-27",
+      "theme": "Combining, flattening, and expanding streams",
+      "status": "planned",
+      "operators": [
+        "mergeAll",
+        "concatAll",
+        "switchAll",
+        "exhaustAll",
+        "mergeWith",
+        "concatWith",
+        "combineLatestWith",
+        "zipWith",
+        "withLatestFrom",
+        "raceWith",
+        "combineLatestAll",
+        "zipAll",
+        "mergeScan",
+        "switchScan",
+        "expand"
+      ],
+      "completedOperators": []
+    },
+    {
+      "number": 6,
+      "plannedDate": "2026-11-28",
+      "theme": "Completion, recovery, effects, and shared execution",
+      "status": "planned",
+      "operators": [
+        "every",
+        "isEmpty",
+        "defaultIfEmpty",
+        "throwIfEmpty",
+        "ignoreElements",
+        "materialize",
+        "dematerialize",
+        "catchError",
+        "onErrorResumeNextWith",
+        "retry",
+        "repeat",
+        "tap",
+        "finalize",
+        "share",
+        "connect"
+      ],
+      "completedOperators": []
+    },
+    {
+      "number": 7,
+      "plannedDate": "2026-11-29",
+      "theme": "Compatibility: aliases and older operator forms",
+      "status": "planned",
+      "operators": [
+        "mapTo",
+        "pluck",
+        "flatMap",
+        "concatMapTo",
+        "mergeMapTo",
+        "switchMapTo",
+        "combineAll",
+        "exhaust",
+        "combineLatest",
+        "concat",
+        "merge",
+        "race",
+        "zip",
+        "partition",
+        "timeoutWith"
+      ],
+      "completedOperators": []
+    },
+    {
+      "number": 8,
+      "plannedDate": "2026-11-30",
+      "theme": "Compatibility: multicast and resubscription",
+      "status": "planned",
+      "operators": [
+        "multicast",
+        "publish",
+        "publishBehavior",
+        "publishLast",
+        "publishReplay",
+        "refCount",
+        "repeatWhen",
+        "retryWhen"
+      ],
+      "completedOperators": []
+    }
+  ]
+}

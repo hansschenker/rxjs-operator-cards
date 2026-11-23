@@ -1,0 +1,1984 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-11-23",
+  "source": {
+    "repository": "ReactiveX/rxjs",
+    "branch": "7.x",
+    "commit": "e5351d02e225e275ac0e497c7b66eaa5f0c88791",
+    "directory": "src/internal/operators",
+    "requestedUrl": "https://github.com/ReactiveX/rxjs/tree/7.x/src/internal/operators",
+    "pinnedUrl": "https://github.com/ReactiveX/rxjs/tree/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators"
+  },
+  "cardReferenceVersion": "7.8.2",
+  "versionComparison": {
+    "referenceVersion": "7.8.2",
+    "checkedFiles": 117,
+    "matchingFiles": 117,
+    "mismatches": []
+  },
+  "counts": {
+    "sourceFiles": 117,
+    "operatorFiles": 113,
+    "helperFiles": 4,
+    "currentOperatorFiles": 90,
+    "deprecatedOperatorFiles": 23,
+    "publicOperatorNames": 114
+  },
+  "publicEntryPoints": [
+    {
+      "path": "src/index.ts",
+      "operatorExportCount": 107
+    },
+    {
+      "path": "src/operators/index.ts",
+      "operatorExportCount": 113
+    }
+  ],
+  "files": [
+    {
+      "name": "OperatorSubscriber",
+      "path": "src/internal/operators/OperatorSubscriber.ts",
+      "gitBlobSha": "593b937bdd0c9c9cfd6b96f8cb424f8464674ee1",
+      "role": "internal-helper"
+    },
+    {
+      "name": "audit",
+      "path": "src/internal/operators/audit.ts",
+      "gitBlobSha": "da138008627cbcff055e51ddf418484c0cc4beff",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "audit",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "auditTime",
+      "path": "src/internal/operators/auditTime.ts",
+      "gitBlobSha": "c2beddf4a92b0461bd5b63cb08e4f5bd4b8cb08b",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "auditTime",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "buffer",
+      "path": "src/internal/operators/buffer.ts",
+      "gitBlobSha": "2ca2fdecd1990e4d686e4fe761e9cb7d54f88c83",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "buffer",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "bufferCount",
+      "path": "src/internal/operators/bufferCount.ts",
+      "gitBlobSha": "1d82d2c213fd381bfa8301fdfb0331a955b5181e",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "bufferCount",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "bufferTime",
+      "path": "src/internal/operators/bufferTime.ts",
+      "gitBlobSha": "43a7b13669803dd746e4b27dab29e1d3da00b2e0",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "bufferTime",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "bufferToggle",
+      "path": "src/internal/operators/bufferToggle.ts",
+      "gitBlobSha": "fabefbc539996074f528029c4406fd033885ac37",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "bufferToggle",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "bufferWhen",
+      "path": "src/internal/operators/bufferWhen.ts",
+      "gitBlobSha": "ee644020f1a58b8cdc00398f6c30d9946254d5bb",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "bufferWhen",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "catchError",
+      "path": "src/internal/operators/catchError.ts",
+      "gitBlobSha": "0e2fc6ddcd4de4f43808ef7a0c32ac4c96e996d0",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "catchError",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "combineAll",
+      "path": "src/internal/operators/combineAll.ts",
+      "gitBlobSha": "c24157e08b2975904a69acb6d533928209b871b6",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "combineAll",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "combineLatest",
+      "path": "src/internal/operators/combineLatest.ts",
+      "gitBlobSha": "3f0f3a6379e4e989ed838e3b4dc91b8a83dd47c0",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "combineLatest",
+          "entryPoints": [
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "combineLatestAll",
+      "path": "src/internal/operators/combineLatestAll.ts",
+      "gitBlobSha": "434f6216df63af51372e8cb1eed02a6ef34eae48",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "combineLatestAll",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "combineLatestWith",
+      "path": "src/internal/operators/combineLatestWith.ts",
+      "gitBlobSha": "b262f890b8a2213c82400ad98ae16c4edf59dc22",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "combineLatestWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "concat",
+      "path": "src/internal/operators/concat.ts",
+      "gitBlobSha": "eadb5958378ad3ab169fc63279c4b8e017b5e4e3",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "concat",
+          "entryPoints": [
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "concatAll",
+      "path": "src/internal/operators/concatAll.ts",
+      "gitBlobSha": "05be4fc9c941d6bc31cd657ac645efab7d65a81f",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "concatAll",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "concatMap",
+      "path": "src/internal/operators/concatMap.ts",
+      "gitBlobSha": "1a6dc67104f894b1e4e73d3b87dc0d1f7fb955c9",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "concatMap",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "concatMapTo",
+      "path": "src/internal/operators/concatMapTo.ts",
+      "gitBlobSha": "9c04b8e2009b59d3057712cd9a98bcbe6936c3dc",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "concatMapTo",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "concatWith",
+      "path": "src/internal/operators/concatWith.ts",
+      "gitBlobSha": "b836b29e2284477203ccf4a57a5ca9e2f8637512",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "concatWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "connect",
+      "path": "src/internal/operators/connect.ts",
+      "gitBlobSha": "4a6b3c4c20b403000b35fa283789a14e710d37d3",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "connect",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "count",
+      "path": "src/internal/operators/count.ts",
+      "gitBlobSha": "8b764f8332537c8475ec3b78577f98bf38ff7720",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "count",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "debounce",
+      "path": "src/internal/operators/debounce.ts",
+      "gitBlobSha": "b644855524fb4ce330e2b20534be846e73ab4f6c",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "debounce",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "debounceTime",
+      "path": "src/internal/operators/debounceTime.ts",
+      "gitBlobSha": "0992bce226a034b641834234f93e26c8f30289ef",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "debounceTime",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "defaultIfEmpty",
+      "path": "src/internal/operators/defaultIfEmpty.ts",
+      "gitBlobSha": "9e0d277e279a77b3a638344c1d61c47fc8a79f44",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "defaultIfEmpty",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "delay",
+      "path": "src/internal/operators/delay.ts",
+      "gitBlobSha": "47fae4986939d977df93dbb0adbc51dfec6d63cb",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "delay",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "delayWhen",
+      "path": "src/internal/operators/delayWhen.ts",
+      "gitBlobSha": "0755507bee3531d8a03c151c500e44cb36027cc1",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "delayWhen",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "dematerialize",
+      "path": "src/internal/operators/dematerialize.ts",
+      "gitBlobSha": "3a4e17f28ce7d919cae2403c3224118cefa14f29",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "dematerialize",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "distinct",
+      "path": "src/internal/operators/distinct.ts",
+      "gitBlobSha": "70ed2c235a5ba293d00a0c568d00dc411e9e3c3e",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "distinct",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "distinctUntilChanged",
+      "path": "src/internal/operators/distinctUntilChanged.ts",
+      "gitBlobSha": "5db2f9872b65903414993d15de11a1391fa9e2f5",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "distinctUntilChanged",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "distinctUntilKeyChanged",
+      "path": "src/internal/operators/distinctUntilKeyChanged.ts",
+      "gitBlobSha": "b7c45936e5d00d1d8680123389f3609ed4d5b206",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "distinctUntilKeyChanged",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "elementAt",
+      "path": "src/internal/operators/elementAt.ts",
+      "gitBlobSha": "47a1d34b1ee78ffd5010efaa1927fa51d5d41820",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "elementAt",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "endWith",
+      "path": "src/internal/operators/endWith.ts",
+      "gitBlobSha": "436e5b301a6104d1a3bd939df4d58b70bbc4e9c0",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "endWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "every",
+      "path": "src/internal/operators/every.ts",
+      "gitBlobSha": "a6a86bfd8b887fd1df6838fc72fa8a89bd9192b9",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "every",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "exhaust",
+      "path": "src/internal/operators/exhaust.ts",
+      "gitBlobSha": "a4410dbfdf384b24a0b05bae31fe596f8a85fe53",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "exhaust",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "exhaustAll",
+      "path": "src/internal/operators/exhaustAll.ts",
+      "gitBlobSha": "4a58a5e7045e0c247cab2e0d5e8d3cd941b324bb",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "exhaustAll",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "exhaustMap",
+      "path": "src/internal/operators/exhaustMap.ts",
+      "gitBlobSha": "bf666830ab21fddd66bf5ff92d80e7d01a5f28b2",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "exhaustMap",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "expand",
+      "path": "src/internal/operators/expand.ts",
+      "gitBlobSha": "481a373de104f03c479713dab5974eb8da6d7e2d",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "expand",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "filter",
+      "path": "src/internal/operators/filter.ts",
+      "gitBlobSha": "ccc1dec43b5e1f5e141c40cf92d7c77de9d713a9",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "filter",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "finalize",
+      "path": "src/internal/operators/finalize.ts",
+      "gitBlobSha": "12821fd23b49fcad09fc0797b132a478bfd0f2dd",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "finalize",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "find",
+      "path": "src/internal/operators/find.ts",
+      "gitBlobSha": "0697abf552bb3e671c05c3c393d5a5f24b1c9410",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "find",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "findIndex",
+      "path": "src/internal/operators/findIndex.ts",
+      "gitBlobSha": "e1ef7574f2746f81b9cacc841236baed8809d58f",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "findIndex",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "first",
+      "path": "src/internal/operators/first.ts",
+      "gitBlobSha": "337aa59b04cdbdf42e05688f81c6029981cb02fd",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "first",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "flatMap",
+      "path": "src/internal/operators/flatMap.ts",
+      "gitBlobSha": "817917cd76b1d04b5289d652ce85da1cb2dd9f6a",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "flatMap",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "groupBy",
+      "path": "src/internal/operators/groupBy.ts",
+      "gitBlobSha": "17bbb9ab2a30ba4b8077e5e1aad789f949fe5fa6",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "groupBy",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "ignoreElements",
+      "path": "src/internal/operators/ignoreElements.ts",
+      "gitBlobSha": "d4977ac897d86800d0287d9c154980c297aacd2c",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "ignoreElements",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "isEmpty",
+      "path": "src/internal/operators/isEmpty.ts",
+      "gitBlobSha": "5de8deb9f1c212f926e71b7ec7ccda2082c61b66",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "isEmpty",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "joinAllInternals",
+      "path": "src/internal/operators/joinAllInternals.ts",
+      "gitBlobSha": "74876e9b787abc35749da03767fc56843e6daf99",
+      "role": "internal-helper"
+    },
+    {
+      "name": "last",
+      "path": "src/internal/operators/last.ts",
+      "gitBlobSha": "698ce2321eec65fb97d5c6cce6d059d08df6b247",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "last",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "path": "src/internal/operators/map.ts",
+      "gitBlobSha": "fa7305daf15088e8438c8d4fd7262ad3f9b6ac96",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "map",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "mapTo",
+      "path": "src/internal/operators/mapTo.ts",
+      "gitBlobSha": "9fb8a8eee61b959812803f21e385c653e8e55445",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "mapTo",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "materialize",
+      "path": "src/internal/operators/materialize.ts",
+      "gitBlobSha": "5f9a629c17afac228d7264c5fe9bebc3c88fc6a3",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "materialize",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "max",
+      "path": "src/internal/operators/max.ts",
+      "gitBlobSha": "8c2f5d035dcce8ca1ab6f144dc8ce81b5dfb7ff4",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "max",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "merge",
+      "path": "src/internal/operators/merge.ts",
+      "gitBlobSha": "73fff7dd361b411d6d85e1f66f2a201ae58e11e6",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "merge",
+          "entryPoints": [
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "mergeAll",
+      "path": "src/internal/operators/mergeAll.ts",
+      "gitBlobSha": "51f28fddf7b874502a638f0dcb0f5cf293628ba4",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "mergeAll",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "mergeInternals",
+      "path": "src/internal/operators/mergeInternals.ts",
+      "gitBlobSha": "dab3a2b4dbf63f6ee6c6f8ac140ecbbc21958cac",
+      "role": "internal-helper"
+    },
+    {
+      "name": "mergeMap",
+      "path": "src/internal/operators/mergeMap.ts",
+      "gitBlobSha": "5b698ea48497b0b7b28ddfb0acff8046b46b40ea",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "mergeMap",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "mergeMapTo",
+      "path": "src/internal/operators/mergeMapTo.ts",
+      "gitBlobSha": "bcc4654608e856c99c213bdccf9b02fc3f4e8f3e",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "mergeMapTo",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "mergeScan",
+      "path": "src/internal/operators/mergeScan.ts",
+      "gitBlobSha": "c9c520b296b61ffbfcc0e018f9aaae0f46a7fcc8",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "mergeScan",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "mergeWith",
+      "path": "src/internal/operators/mergeWith.ts",
+      "gitBlobSha": "b0c81426fb66a547bfe746894c0802a2c5702c29",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "mergeWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "min",
+      "path": "src/internal/operators/min.ts",
+      "gitBlobSha": "41dcd09c21e782e58b5c60eb7314154869e2d085",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "min",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "multicast",
+      "path": "src/internal/operators/multicast.ts",
+      "gitBlobSha": "4ea03d2f43d29928e3c98045643a00202aade3d4",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "multicast",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "observeOn",
+      "path": "src/internal/operators/observeOn.ts",
+      "gitBlobSha": "bd37111fc976f56bf2042df31fccf3a4cfda0048",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "observeOn",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "onErrorResumeNextWith",
+      "path": "src/internal/operators/onErrorResumeNextWith.ts",
+      "gitBlobSha": "9355c3fa546823b822d8a7e65c24b1d3d33a67dc",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "onErrorResumeNext",
+          "entryPoints": [
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        },
+        {
+          "name": "onErrorResumeNextWith",
+          "entryPoints": [
+            "rxjs"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "pairwise",
+      "path": "src/internal/operators/pairwise.ts",
+      "gitBlobSha": "e2b0eba00d6409aac4d5436c62f63522cbecc516",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "pairwise",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "partition",
+      "path": "src/internal/operators/partition.ts",
+      "gitBlobSha": "9f29f8540f73fe58d4fa4ea727739fcbfe9b77bf",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "partition",
+          "entryPoints": [
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "pluck",
+      "path": "src/internal/operators/pluck.ts",
+      "gitBlobSha": "b80da73b6bd0423593e9f6c56f94573680948f71",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "pluck",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "publish",
+      "path": "src/internal/operators/publish.ts",
+      "gitBlobSha": "6a4270564b6d0891594b11edd627c133608a62a1",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "publish",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "publishBehavior",
+      "path": "src/internal/operators/publishBehavior.ts",
+      "gitBlobSha": "d94589c09cbdbb4bd8bdb0548a6206f20af10494",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "publishBehavior",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "publishLast",
+      "path": "src/internal/operators/publishLast.ts",
+      "gitBlobSha": "ded47fb523c97aeb4488cfa9961ea55390df73f2",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "publishLast",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "publishReplay",
+      "path": "src/internal/operators/publishReplay.ts",
+      "gitBlobSha": "47494e2a66cd01f124259d8bbb614f7b74f9b7a4",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "publishReplay",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "race",
+      "path": "src/internal/operators/race.ts",
+      "gitBlobSha": "efa8cd94cb37a91d1860df3cb9814d478f83e159",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "race",
+          "entryPoints": [
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "raceWith",
+      "path": "src/internal/operators/raceWith.ts",
+      "gitBlobSha": "6e7292982e96efabe194d173f06b18b56915f790",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "raceWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "reduce",
+      "path": "src/internal/operators/reduce.ts",
+      "gitBlobSha": "5ee565e9d0be00d0036f4747a990045ff0048fb3",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "reduce",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "refCount",
+      "path": "src/internal/operators/refCount.ts",
+      "gitBlobSha": "c4162c0d7030580aaaea1d7b88d661438d7b658e",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "refCount",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "repeat",
+      "path": "src/internal/operators/repeat.ts",
+      "gitBlobSha": "21a8cce09c4f4bc431d70cf619c1e19c22ff1ed7",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "repeat",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "repeatWhen",
+      "path": "src/internal/operators/repeatWhen.ts",
+      "gitBlobSha": "403b2c6c4e81228bf7083a5a862129bbe84e9fe0",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "repeatWhen",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "retry",
+      "path": "src/internal/operators/retry.ts",
+      "gitBlobSha": "dbb5164315fa86140fa52ce5182e9227315ef1bc",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "retry",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "retryWhen",
+      "path": "src/internal/operators/retryWhen.ts",
+      "gitBlobSha": "0b83ad653959c5cdb982521e200be649ce48ae43",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "retryWhen",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "sample",
+      "path": "src/internal/operators/sample.ts",
+      "gitBlobSha": "9008af2f074d906ef53debdde4d8236eadc9cb3a",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "sample",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "sampleTime",
+      "path": "src/internal/operators/sampleTime.ts",
+      "gitBlobSha": "e4af047801fba8560d9748647143a08410000fee",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "sampleTime",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "scan",
+      "path": "src/internal/operators/scan.ts",
+      "gitBlobSha": "ce30695cdcddf7572215b16d2dbad1748f097d3f",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "scan",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "scanInternals",
+      "path": "src/internal/operators/scanInternals.ts",
+      "gitBlobSha": "f2c2e5a4e98888976e9df78edc90bb2481043a56",
+      "role": "internal-helper"
+    },
+    {
+      "name": "sequenceEqual",
+      "path": "src/internal/operators/sequenceEqual.ts",
+      "gitBlobSha": "a6f9bec30888629c805fe7b58b8be98a6007a6de",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "sequenceEqual",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "share",
+      "path": "src/internal/operators/share.ts",
+      "gitBlobSha": "bc0c2707f2ada8295dbad08857fcca821bfbac46",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "share",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "shareReplay",
+      "path": "src/internal/operators/shareReplay.ts",
+      "gitBlobSha": "b43f363e9294c25c8eb8a0ef58bbff90f0524e6c",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "shareReplay",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "single",
+      "path": "src/internal/operators/single.ts",
+      "gitBlobSha": "59c21c571e6cfaf560fe63798f941b804dd31fb6",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "single",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "skip",
+      "path": "src/internal/operators/skip.ts",
+      "gitBlobSha": "424ad65178d392e67f9dab25ae77a154065a54d3",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "skip",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "skipLast",
+      "path": "src/internal/operators/skipLast.ts",
+      "gitBlobSha": "e0f75b596c32946289098eb47489d7c88a11d493",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "skipLast",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "skipUntil",
+      "path": "src/internal/operators/skipUntil.ts",
+      "gitBlobSha": "e6984e5189ced4526588f1ef08d728f6bc11950f",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "skipUntil",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "skipWhile",
+      "path": "src/internal/operators/skipWhile.ts",
+      "gitBlobSha": "84b7379846a2b0d04b14b1f2f6ad369aa89fa3b1",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "skipWhile",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "startWith",
+      "path": "src/internal/operators/startWith.ts",
+      "gitBlobSha": "8c11ddb52bdd4510df985614b24b53391cfc7dcb",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "startWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "subscribeOn",
+      "path": "src/internal/operators/subscribeOn.ts",
+      "gitBlobSha": "17240d048887f59d5526b23da6876c7851b4827c",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "subscribeOn",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "switchAll",
+      "path": "src/internal/operators/switchAll.ts",
+      "gitBlobSha": "69e9cbb3a732aa2b730b9ba5bd54f2894c29c3ea",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "switchAll",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "switchMap",
+      "path": "src/internal/operators/switchMap.ts",
+      "gitBlobSha": "0ded7ba9fd788249045b40abd6aa5b61f2bfc703",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "switchMap",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "switchMapTo",
+      "path": "src/internal/operators/switchMapTo.ts",
+      "gitBlobSha": "9819bdf1cc48e139f4308ff04ea115798b07f033",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "switchMapTo",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "switchScan",
+      "path": "src/internal/operators/switchScan.ts",
+      "gitBlobSha": "902a2a70e778b525ac0b01b65244d02a925bf72a",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "switchScan",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "take",
+      "path": "src/internal/operators/take.ts",
+      "gitBlobSha": "b2054e78b2d4805f01b8f1fa8618ee3e7fe569b9",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "take",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "takeLast",
+      "path": "src/internal/operators/takeLast.ts",
+      "gitBlobSha": "972d147062c5fb1aa33222028fbe6e0f3700e563",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "takeLast",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "takeUntil",
+      "path": "src/internal/operators/takeUntil.ts",
+      "gitBlobSha": "177141d3563c061aebbb4dba5cbfca26baa43442",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "takeUntil",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "takeWhile",
+      "path": "src/internal/operators/takeWhile.ts",
+      "gitBlobSha": "b48e34c06e39955e6cfad9f9a8c27b07f0f59e23",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "takeWhile",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "tap",
+      "path": "src/internal/operators/tap.ts",
+      "gitBlobSha": "bc6243e9ef5d3879d2a7eef7665545df6d7a9a1e",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "tap",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "throttle",
+      "path": "src/internal/operators/throttle.ts",
+      "gitBlobSha": "8c53a1c4455af045763d25017592f79b7f839ec5",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "throttle",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "throttleTime",
+      "path": "src/internal/operators/throttleTime.ts",
+      "gitBlobSha": "de325fe50f644d2842746baddf1df1f3588930fc",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "throttleTime",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "throwIfEmpty",
+      "path": "src/internal/operators/throwIfEmpty.ts",
+      "gitBlobSha": "76497a221e972f767e60699fd3c828d7d8d3abaf",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "throwIfEmpty",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "timeInterval",
+      "path": "src/internal/operators/timeInterval.ts",
+      "gitBlobSha": "6a58ab220912d2c0d69d580947292792fb11180e",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "timeInterval",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "timeout",
+      "path": "src/internal/operators/timeout.ts",
+      "gitBlobSha": "a2e1635e6fc18d6eff125f97cfc428591023cc41",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "timeout",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "timeoutWith",
+      "path": "src/internal/operators/timeoutWith.ts",
+      "gitBlobSha": "1a4d0ca97ee9d92be057d3b5243a37ee6af6360f",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "timeoutWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "timestamp",
+      "path": "src/internal/operators/timestamp.ts",
+      "gitBlobSha": "bb388de0de5acd49f97f9d16d8809be60ab38a6f",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "timestamp",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "toArray",
+      "path": "src/internal/operators/toArray.ts",
+      "gitBlobSha": "26784724cf4ab4763be782f7edf32ca87e08414f",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "toArray",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "window",
+      "path": "src/internal/operators/window.ts",
+      "gitBlobSha": "b8250cbc2ef8fc92c2e8f7697d5c05a7f0ab8683",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "window",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "windowCount",
+      "path": "src/internal/operators/windowCount.ts",
+      "gitBlobSha": "cf24e1bb1ba67c19ecea25ffcc794e13620e1542",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "windowCount",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "windowTime",
+      "path": "src/internal/operators/windowTime.ts",
+      "gitBlobSha": "b54656b9c3778363a20bb3af7851673df96fd8d7",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "windowTime",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "windowToggle",
+      "path": "src/internal/operators/windowToggle.ts",
+      "gitBlobSha": "a17bef5fa66986ed7224a665ce48c3057b36b0b6",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "windowToggle",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "windowWhen",
+      "path": "src/internal/operators/windowWhen.ts",
+      "gitBlobSha": "ec31be01f019f05ebc75d1164bbdbfec1efac554",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "windowWhen",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "withLatestFrom",
+      "path": "src/internal/operators/withLatestFrom.ts",
+      "gitBlobSha": "6cd7e4a85656f9a41b6a0e88d06474e89614f93d",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "withLatestFrom",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "zip",
+      "path": "src/internal/operators/zip.ts",
+      "gitBlobSha": "f8c2f684ed885e98b7ec323debacc719eb836a06",
+      "role": "operator",
+      "deprecated": true,
+      "publicExports": [
+        {
+          "name": "zip",
+          "entryPoints": [
+            "rxjs/operators"
+          ],
+          "deprecated": true
+        }
+      ]
+    },
+    {
+      "name": "zipAll",
+      "path": "src/internal/operators/zipAll.ts",
+      "gitBlobSha": "697cff51b2e0e655c2ad217c34e61c2de50708a0",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "zipAll",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    },
+    {
+      "name": "zipWith",
+      "path": "src/internal/operators/zipWith.ts",
+      "gitBlobSha": "22eaad79382c9829d9b296461ce0047db7fea646",
+      "role": "operator",
+      "deprecated": false,
+      "publicExports": [
+        {
+          "name": "zipWith",
+          "entryPoints": [
+            "rxjs",
+            "rxjs/operators"
+          ],
+          "deprecated": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 # Contributing operator cards
 
-1. Choose a missing operator or an explicitly scoped variant from the [roadmap](docs/roadmap.md).
+1. Choose the next pending operator from the [session plan](docs/session-plan.md) and [progress manifest](planning/operator-sessions.json), or identify an explicitly scoped variant separately.
 2. Read the [notation guide](docs/notation.md) and [writing contract](docs/card-writing-contract.md).
 3. Copy [the template](templates/operator-card.md) to `cards/<operatorName>.md`.
 4. Inspect the RxJS 7.8.2 implementation and cite the exact source file. Official documentation is a useful companion; use implementation behavior to resolve simplified prose.
 5. Describe values and triggers before implementation. Make time, cancellation, and sharing explicit.
 6. Include an illustrative trace and a few observable verification obligations. Check any newly asserted corner case against the reference implementation.
-7. Add the card to [the operator index](docs/operator-index.md) and update the first-edition count if the collection grows.
+7. Add the accepted card to [the operator index](docs/operator-index.md), update its session's completed names/status, and keep collection counts and validation evidence current.
 
 ## Review questions
 

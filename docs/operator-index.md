@@ -1,6 +1,8 @@
 # Operator index
 
-**Reference:** RxJS 7.8.2 · **Initial collection:** 14 cards
+**Reference:** RxJS 7.8.2 · **Completed collection:** 15 cards · **Session 1:** Complete
+
+The [session plan](session-plan.md) assigns all 113 operator source files in eight batches. The 15 cards below are complete within their declared scopes; 98 cards remain planned. Session 2 starts with selection and boundary behavior on 24 November 2026.
 
 The signatures are explanatory and specialize some overloads. Read each card's scope and lifecycle rules. `T?` in an output position is still an Observable, with at most one emitted value.
 
@@ -20,6 +22,7 @@ The signatures are explanatory and specialize some overloads. Read each card's s
 | [switchMap](../cards/switchMap.md) | `(T! → R*) → T* → R*` | Replace the active inner connection |
 | [exhaustMap](../cards/exhaustMap.md) | `(T! → R*) → T* → R*` | Ignore outer values while busy |
 | [shareReplay](../cards/shareReplay.md) | `T* → T*` after choosing its replay policy | Share execution and replay cached values |
+| [startWith](../cards/startWith.md) | `P[] → T* → (P \| T)*` | Emit supplied prefixes before connecting to the source |
 
 ## Suggested reading paths
 
@@ -28,6 +31,6 @@ The signatures are explanatory and specialize some overloads. Read each card's s
 - **Nested values:** buffer → window → the four flattening policies.
 - **Connection ownership:** takeUntil → switchMap → shareReplay.
 
-## Beyond the first edition
+## Next sessions
 
-The [roadmap](roadmap.md) lists the next families. An operator absent from this table does not yet have a completed card in this edition.
+The [session plan](session-plan.md) contains the complete assignment and dates; [operator-sessions.json](../planning/operator-sessions.json) records progress. An operator absent from this table does not yet have a completed card. Planned operators are listed in the plan without links to nonexistent card files.
