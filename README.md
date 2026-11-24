@@ -43,6 +43,7 @@ The first six sessions cover 90 current operator files; the final two cover 23 d
 
 Each card follows **Intuition → Specification → Verification**:
 
+- **Compact operator notation:** seven opening lines for operator name, stream shape, state, initial state, value step, ownership, and lifecycle. See the [notation guide](docs/notation.md#8-compact-operator-notation).
 - **Type shape:** supplied functions or values, input stream, and output stream.
 - **Local and whole-stream behavior:** what one event can produce, and what the entire connection can emit.
 - **Remembers:** state retained between events and who owns it.

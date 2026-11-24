@@ -1,5 +1,15 @@
 # map
 
+```text
+Operator:       map
+Stream shape:   T* → R*
+State:          Nat — source index
+Initial state:  0
+Value step:     (Nat × T) → (Nat × R)
+Ownership:      One state per operator subscription
+Lifecycle:      Forward completion/error; projection errors terminate; cancellation closes upstream silently
+```
+
 **Family:** Value transformation · **Reference:** RxJS 7.8.2 · **Scope:** Projection overload without deprecated `thisArg`
 
 > Transform each arriving value with a supplied function, preserving its place in the stream so downstream consumers receive the representation they need.

@@ -1,5 +1,15 @@
 # exhaustMap
 
+```text
+Operator:       exhaustMap
+Stream shape:   T* → R*
+State:          Option<InnerId> × Nat × Bool
+Initial state:  (None, 0, false)
+Value step:     (S × T) → (S × Action[]) — connect if idle; ignore without projection if busy
+Ownership:      One state per operator subscription
+Lifecycle:      Source complete waits for active inner; errors forward and close all; cancellation closes silently
+```
+
 **Family:** Flattening · **Reference:** RxJS 7.8.2 · **Scope:** `exhaustMap(project)`; no deprecated `resultSelector`.
 
 > An accepted source value opens an inner stream; new values are ignored until it completes, preventing overlapping work.
@@ -28,6 +38,8 @@ One output per input is not guaranteed. A never-completing inner keeps the conne
 ## Remembers
 
 Each connection owns the current inner subscription, source-completed flag, and admission index. Only projection calls advance that index. There is no waiting queue.
+
+The compact state orders these as optional inner identity, next admission index, and source-completed flag. `None` means idle; `Some(id)` means busy. Ignoring a value leaves all three components unchanged and produces an empty action list.
 
 ## Event → action
 

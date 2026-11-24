@@ -48,10 +48,10 @@ Obligations are potential checks. The separate [validation report](validation.md
 A stateful rule can be written as:
 
 ```text
-step :: State × Event → State × Actions
+step :: State × Event → State × Action[]
 ```
 
-`Event` includes the source, inner, notifier, timer, and closure events relevant to that operator. `Actions` may include emitting a value, forwarding a terminal notification, opening/closing a connection, or scheduling/canceling work.
+`Event` includes the source, inner, notifier, timer, and closure events relevant to that operator. `Action[]` is a finite ordered list of decisions, such as emitting a value, forwarding a terminal notification, opening/closing a connection, or scheduling/canceling work.
 
 This connects the readable card to a Mealy-style specification. A local transition rule describes a step. Applying it over an event history produces an execution trace. Later work can derive state-transition tables, diagrams, BDD scenarios, and checks from reviewed cards.
 
@@ -67,6 +67,8 @@ This repository's first edition does not implement that generator or claim forma
 6. **Keep the repository usable as documents.** Markdown cards need no application, build step, or dependency installation.
 
 ## Standard card sections
+
+Every card opens with the same seven-line compact notation block: **Operator**, **Stream shape**, **State**, **Initial state**, **Value step**, **Ownership**, and **Lifecycle**. This gives readers a consistent overview of the dataflow, local memory, value processing, and lifetime before they read the explanation. The [notation guide](notation.md#8-compact-operator-notation) defines its symbols and scope.
 
 See the [template](../templates/operator-card.md). State only what applies, but do not omit a lifecycle or ownership rule merely because the type shape is simple.
 

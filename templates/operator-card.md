@@ -1,5 +1,15 @@
 # OPERATOR_NAME
 
+```text
+Operator:       OPERATOR_NAME
+Stream shape:   INPUT_STREAM → OUTPUT_STREAM
+State:          RUNNING_EXECUTION_MEMORY
+Initial state:  INITIAL_MEMORY
+Value step:     (STATE × INPUT_VALUE) → (STATE × VALUE_RESULT_OR_ACTIONS)
+Ownership:      STATE_AND_CONNECTION_OWNER
+Lifecycle:      COMPLETION_ERROR_AND_CANCELLATION_RULES
+```
+
 **Family:** FAMILY · **Reference:** RxJS 7.8.2 · **Scope:** SPECIFIC_OVERLOAD
 
 > One sentence explaining what flows, what changes on a new value, and why this operator is useful.
@@ -28,6 +38,8 @@ State the conditions for any exactly-one or nonempty claim. Cardinality counts `
 ## Remembers
 
 List the state needed for the behavior. Distinguish per-connection state from state owned by a sharing boundary.
+
+Define any operator-specific state aliases used in the opening block. Its `Value step` summarizes source-value processing; subscription, timer, notifier, inner, and terminal events belong in the event/action table. Use the [compact-notation conventions](../docs/notation.md#8-compact-operator-notation).
 
 ## Event → action
 

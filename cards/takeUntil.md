@@ -1,5 +1,15 @@
 # takeUntil
 
+```text
+Operator:       takeUntil
+Stream shape:   T* → T*
+State:          Unit — no payload memory
+Initial state:  ()
+Value step:     (Unit × T) → (Unit × T) — forward while open
+Ownership:      One source/notifier subscription pair per operator subscription
+Lifecycle:      Notifier next/source complete completes; either error forwards; cancellation closes both silently
+```
+
 **Family:** Notifier selection · **Reference:** RxJS 7.8.2 · **Scope:** Observable source and Observable notifier
 
 > Forward arriving source values until the notifier produces its first value, then complete and release both connections.

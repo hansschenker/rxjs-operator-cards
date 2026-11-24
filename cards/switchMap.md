@@ -1,5 +1,15 @@
 # switchMap
 
+```text
+Operator:       switchMap
+Stream shape:   T* → R*
+State:          Option<InnerId> × Nat × Bool
+Initial state:  (None, 0, false)
+Value step:     (S × T) → (S × Action[]) — close old inner, then project and connect the replacement
+Ownership:      One state per operator subscription
+Lifecycle:      Source complete waits for current inner; errors forward and close all; cancellation closes silently
+```
+
 **Family:** Flattening · **Reference:** RxJS 7.8.2 · **Scope:** `switchMap(project)`; no deprecated `resultSelector`.
 
 > Each source value replaces the current inner connection, so subsequent results come from the newest selected stream.
@@ -28,6 +38,8 @@ Replacement controls future delivery. It neither retracts delivered values nor g
 ## Remembers
 
 Each downstream connection owns the current inner subscription, projection index, and source-completed flag. Superseded inputs and previous outputs are not retained.
+
+The compact state lists the optional current inner identity, next projection index, and source-completed flag, in that order. `InnerId` identifies a subscription, not an emitted value. The value-step actions preserve closing-before-projection order.
 
 ## Event → action
 

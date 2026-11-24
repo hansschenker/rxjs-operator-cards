@@ -1,5 +1,15 @@
 # debounceTime
 
+```text
+Operator:       debounceTime
+Stream shape:   T* → T*
+State:          Option<T × Time> × Option<TimerId> — latest arrival and scheduled task
+Initial state:  (None, None)
+Value step:     (S × T × Time) → (S × Action[]) — replace pending value; schedule if idle
+Ownership:      One pending value and scheduled task per operator subscription
+Lifecycle:      Completion flushes then completes; error discards then errors; cancellation discards and closes silently
+```
+
 **Family:** Time · **Reference:** RxJS 7.8.2 · **Scope:** Positive duration with an asynchronous or virtual-time scheduler that honors scheduled deadlines.
 
 > Remember the newest value and release it after a quiet interval, while giving completion and failure their own rules.
@@ -26,6 +36,8 @@ A text field produces query values as someone types. Each new query replaces the
 The operator does not promise an output for every burst if the connection errors or closes. Completion can release a pending value before its deadline.
 
 ## Remembers
+
+In the compact header, `S` is the state shown above, `Time` is read from the supplied scheduler when the value arrives, and `TimerId` identifies the owned scheduled action. An absent pending value has no relevant arrival time.
 
 Per downstream connection: the latest value, the time of its arrival, and an active scheduled action. The behavior can be described by a moving deadline. The implementation may reuse/reschedule an existing action rather than canceling and allocating a timer on every value.
 

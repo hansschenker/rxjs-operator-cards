@@ -1,5 +1,15 @@
 # take
 
+```text
+Operator:       take
+Stream shape:   T* → T* (at most n values)
+State:          Nat — values seen
+Initial state:  0
+Value step:     (Nat × T) → (Nat × Action[]) — emit while admitted; complete at n
+Ownership:      One counter and upstream subscription per operator subscription
+Lifecycle:      n = 0 skips source; limit/source completion completes; errors forward; cancellation closes silently
+```
+
 **Family:** Count selection · **Reference:** RxJS 7.8.2 · **Scope:** `take(n)` for a nonnegative integer `n`
 
 > Forward the first `n` arriving values unchanged, then complete and close this connection to the source.

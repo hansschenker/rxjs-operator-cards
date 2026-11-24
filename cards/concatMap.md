@@ -1,5 +1,15 @@
 # concatMap
 
+```text
+Operator:       concatMap
+Stream shape:   T* → R*
+State:          Option<InnerId> × T[] × Nat × Bool
+Initial state:  (None, [], 0, false)
+Value step:     (S × T) → (S × Action[]) — connect if idle; queue the outer value if busy
+Ownership:      One state per operator subscription
+Lifecycle:      Source complete drains work; errors forward and close all; cancellation closes and discards the queue silently
+```
+
 **Family:** Flattening · **Reference:** RxJS 7.8.2 · **Scope:** `concatMap(project)`; no deprecated `resultSelector`.
 
 > Source values wait their turn; each inner must complete before the next begins, preserving admission order.
@@ -28,6 +38,8 @@ An inner may emit no values or many. Earlier inners must complete before queued 
 ## Remembers
 
 Each connection owns a FIFO queue, current inner subscription, active count, projection index, and source-completed flag. RxJS 7.8.2 implements this through `mergeMap` with concurrency one.
+
+The compact state lists the optional current inner identity, FIFO queue of outer values, next projection index, and source-completed flag, in that order. An occupied inner slot represents an active count of one. Queueing a value does not advance the index; admitting it to the projection does.
 
 ## Event → action
 

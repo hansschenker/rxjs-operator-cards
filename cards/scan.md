@@ -1,5 +1,15 @@
 # scan
 
+```text
+Operator:       scan
+Stream shape:   T* → R*
+State:          R × Nat — accumulated value and source index
+Initial state:  (seed, 0)
+Value step:     ((R × Nat) × T) → ((R × Nat) × R)
+Ownership:      One state per operator subscription; seed objects are not cloned
+Lifecycle:      Forward completion/error; accumulator errors terminate; cancellation closes without a final state
+```
+
 **Family:** Accumulation · **Reference:** RxJS 7.8.2 · **Scope:** Explicit seed with the same seed and result type
 
 > Remember an accumulated state and emit its next version whenever a source value updates it, making changing state available throughout the connection.
