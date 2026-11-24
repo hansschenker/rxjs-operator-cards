@@ -1,16 +1,16 @@
 # Contributing operator cards
 
-1. Choose the next pending operator from the [session plan](docs/session-plan.md) and [progress manifest](planning/operator-sessions.json), or identify an explicitly scoped variant separately.
+1. Choose the next compact card awaiting detailed expansion from the [session plan](docs/session-plan.md) and [progress manifest](planning/operator-sessions.json), or identify an explicitly scoped variant separately. All 113 inventoried operators already have compact notation.
 2. Read the [notation guide](docs/notation.md) and [writing contract](docs/card-writing-contract.md).
-3. Copy [the template](templates/operator-card.md) to `cards/<operatorName>.md`. Fill in its opening seven-line compact notation block, preserving the field order and tailoring the state, ownership, and lifecycle to the card's scope.
+3. Expand the existing file using [the detailed template](templates/operator-card.md), preserving its reviewed seven-line header and useful notes. For an explicitly requested compact-only addition or new scoped variant, use [the compact template](templates/compact-operator-card.md).
 4. Inspect the RxJS 7.8.2 implementation and cite the exact source file. Official documentation is a useful companion; use implementation behavior to resolve simplified prose.
 5. Describe values and triggers before implementation. Make time, cancellation, and sharing explicit.
-6. Include an illustrative trace and a few observable verification obligations. Check any newly asserted corner case against the reference implementation.
-7. Add the accepted card to [the operator index](docs/operator-index.md), update its session's completed names/status, and keep collection counts and validation evidence current.
+6. For detailed expansions, include an illustrative trace and a few observable verification obligations. Check any newly asserted corner case against the reference implementation in either format.
+7. Keep [the operator index](docs/operator-index.md) and progress manifest current. `compactOperators` records compact notation; `completedOperators` and session `status` record detailed expansion. Add to the latter only after the detailed-card completion criteria are met.
 
 ## Review questions
 
-- Does the opening block contain all seven fields in the standard order, agree with the detailed card, and define any operator-specific state aliases?
+- Does the opening block contain all seven fields in the standard order, agree with the accompanying explanation, and define any operator-specific state aliases?
 - Is the local `1 → 0..1` rule kept distinct from the whole-stream cardinality?
 - Are errors, normal completion, and consumer closure separate?
 - Does a notifier trigger on `next`, `complete`, or another event? Is that verified?

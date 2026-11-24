@@ -183,9 +183,9 @@ This is a teaching abstraction. Actual RxJS scheduling supports state, reschedul
 
 `T* → T*` is compatible with many operators. It does not specify which values survive, when they are delivered, whether timers or inner connections exist, how completion is handled, or whether upstream execution is shared.
 
-Those choices belong in the card's event/action and lifecycle sections. Optional future refinements may encode more of them formally, but this edition makes no claim to be a complete behavioral type system.
+Those choices belong in the compact card's scope and behavior notes, or the detailed card's event/action and lifecycle sections. Optional future refinements may encode more of them formally, but this edition makes no claim to be a complete behavioral type system.
 
-See the [operator index](operator-index.md), [template](../templates/operator-card.md), and [references](references.md).
+See the [operator index](operator-index.md), [compact template](../templates/compact-operator-card.md), [detailed template](../templates/operator-card.md), and [references](references.md).
 
 ## 8. Compact operator notation
 
@@ -219,14 +219,14 @@ Lifecycle:      Forward completion/error; cancellation closes silently
 
 `Option<T>` is a local value container, distinct from the stream-cardinality notation `T?`. In an output position of a value step, `None` means no downstream value for that step; it never means emitting `undefined`. Likewise, `Action[]` is an ordinary finite list, never an Observable of actions.
 
-Actions can include delivering a value or terminal notification, opening or closing a subscription, or scheduling or canceling work. Their order is significant. Per-card state aliases are explained in **Remembers**. Operator arguments such as the projection, count, or duration are fixed parameters of the card's scoped rule rather than newly supplied inputs at each step.
+Actions can include delivering a value or terminal notification, opening or closing a subscription, or scheduling or canceling work. Their order is significant. Per-card state aliases are explained in **Notation and scope** for compact cards or **Remembers** for detailed cards. Operator arguments such as the projection, count, or duration are fixed parameters of the card's scoped rule rather than newly supplied inputs at each step.
 
 ### Scope of the summary
 
-The State row describes the memory relevant to an active execution, plus completion flags that are needed while other work remains. Overall closure is governed by Lifecycle and the full event/action table. A compact header is a readable summary, not a complete six-tuple or a claim to model every implementation detail.
+The State row describes the memory relevant to an active execution, plus completion flags that are needed while other work remains. Overall closure is governed by Lifecycle and the accompanying behavior notes or event/action table. A compact header is a readable summary, not a complete six-tuple or a claim to model every implementation detail.
 
-Value step normally describes a source `next` while the relevant connection is open, assuming a supplied function returns normally. A timed step can include an explicit `Time` input read from the scheduler. If the result is an ordinary value or `Option` value, it is the local downstream-value result. If the result is `Action[]`, the card also needs explicit coordination or resource decisions. Setup, timer, notifier, inner, completion, error, and cancellation events remain explicit in the card's event/action table. For higher-order operators, distinguish outer-value processing from inner-value forwarding.
+Value step normally describes a source `next` while the relevant connection is open, assuming a supplied function returns normally. A card coordinating several inputs may use a tagged value to identify the input that produced it. A timed step can include an explicit `Time` input read from the scheduler. If the result is an ordinary value or `Option` value, it is the local downstream-value result. If the result is `Action[]`, the card also needs explicit coordination or resource decisions. Setup, timer, notifier, inner, completion, error, and cancellation events remain explicit in the compact behavior notes or the detailed event/action table. For higher-order operators, distinguish outer-value processing from inner-value forwarding.
 
-Initial state is read together with the Connect row: setup may emit prefixes or an initial window, open a notifier before the source, or complete without ever subscribing upstream. State ownership must identify sharing boundaries; observing a shared source does not automatically share downstream operator state.
+Initial state is read together with the setup notes or Connect row: setup may emit prefixes or an initial window, open a notifier before the source, or complete without ever subscribing upstream. State ownership must identify sharing boundaries; observing a shared source does not automatically share downstream operator state. A connectable result and the two branches returned by `partition` need their own ownership descriptions instead of assuming one ordinary downstream subscription.
 
 The compact block is interpreted under the card's **Scope** declaration immediately below it. Error and cancellation can interrupt processing. These explanatory signatures do not enforce pure user functions, clone mutable seeds, or establish equivalence for every scheduler and reentrant execution.

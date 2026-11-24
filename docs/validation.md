@@ -85,3 +85,25 @@ Documentation checks passed:
 - `git diff --check` reports no whitespace errors.
 
 The collection still has 15 completed cards and 98 planned cards. The 30 behavioral scenarios recorded above remain the existing runtime-validation baseline; this documentation update was checked through structure validation and source review.
+
+## Complete compact-notation coverage — 24 November 2026
+
+The remaining 98 operator source files now have compact cards. Each begins with the requested seven fields and includes an explicit scope, local state definitions, essential behavior notes, and version-pinned implementation references. The extra deprecated pipeable `onErrorResumeNext` name has a separate seven-field block inside `onErrorResumeNextWith`.
+
+| Check | Result |
+| --- | --- |
+| Operator card files match the pinned inventory | 113, with no missing or extra files |
+| Public-name compact blocks | 114 unique names, including the additional alias |
+| Existing detailed cards | All 15 unchanged from the preceding merged checkpoint |
+| New compact cards | 98 with required metadata, notes, and references |
+| Session assignments and coverage | Every source-file operator assigned once; compact and detailed progress recorded separately |
+| Complete index | Every card and the extra alias linked; stream shapes agree with their headers |
+| Local Markdown links and anchors | 581 checked, all resolve |
+| Reference-source verification | All 117 recorded Git blob hashes match the local RxJS 7.8.2 source files |
+| Markdown structure and whitespace | Balanced fences, aligned seven-field blocks, no card placeholders, and clean whitespace checks |
+
+All 98 new operators were reviewed against their pinned implementations and relevant helpers, then independently reviewed across the operator families. The review covered notifier next versus completion, source/inner subscription order, pending-value disposal and flushing, live window/group ownership, join readiness and termination, resubscription triggers, and shared or connectable state retention. Corrections made during review included clearing sample state before delivery, restricting simple retry/repeat count models to integers, and qualifying teardown ordering for legacy notifier-driven resubscription.
+
+The seven fields describe each card's stated scope. Specialized overloads and configurations are identified explicitly rather than inferred from a broad stream shape. Compact completion is now recorded for all 113 source-file cards; only the original 15 remain marked as detailed cards, with their worked traces and verification obligations. The index, plan, roadmap, writing instructions, and templates use that distinction consistently.
+
+No new runtime scenarios were executed for this documentation pass. The 30 passing scenarios recorded above remain the existing runtime-validation baseline; this update adds complete notation coverage, source review, and documentation validation.
