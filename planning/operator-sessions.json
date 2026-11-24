@@ -88,7 +88,7 @@
       "number": 2,
       "plannedDate": "2026-11-24",
       "theme": "Selection, boundaries, and distinct values",
-      "status": "planned",
+      "status": "complete",
       "operators": [
         "skip",
         "takeLast",
@@ -106,7 +106,23 @@
         "distinctUntilChanged",
         "distinctUntilKeyChanged"
       ],
-      "completedOperators": [],
+      "completedOperators": [
+        "skip",
+        "takeLast",
+        "skipLast",
+        "takeWhile",
+        "skipWhile",
+        "skipUntil",
+        "first",
+        "last",
+        "single",
+        "elementAt",
+        "find",
+        "findIndex",
+        "distinct",
+        "distinctUntilChanged",
+        "distinctUntilKeyChanged"
+      ],
       "compactStatus": "complete",
       "compactOperators": [
         "skip",
@@ -124,7 +140,8 @@
         "distinct",
         "distinctUntilChanged",
         "distinctUntilKeyChanged"
-      ]
+      ],
+      "completedDate": "2026-11-24"
     },
     {
       "number": 3,
@@ -368,10 +385,11 @@
   "compactNotationUpdated": "2026-11-24",
   "compactNotationStatus": "complete",
   "compactOperatorCount": 113,
-  "detailedOperatorCount": 15,
+  "detailedOperatorCount": 30,
   "progressDefinitions": {
     "compactOperators": "Operators with a scoped seven-field compact notation card.",
     "completedOperators": "Operators with the full detailed card, reviewed trace, and honest validation record.",
     "status": "Progress of detailed expansion; compact coverage has its own status."
-  }
+  },
+  "detailedUpdated": "2026-11-24"
 }

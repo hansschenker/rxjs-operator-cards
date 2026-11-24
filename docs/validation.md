@@ -1,6 +1,6 @@
 # Validation record
 
-**Review date:** 23 November 2026 · **Reference:** RxJS 7.8.2 · **Runtime:** Node.js v24.22.3
+**Latest review:** 24 November 2026 · **Reference:** RxJS 7.8.2 · **Runtime:** Node.js v24.22.3
 
 ## Original 14-card checkpoint
 
@@ -107,3 +107,54 @@ All 98 new operators were reviewed against their pinned implementations and rele
 The seven fields describe each card's stated scope. Specialized overloads and configurations are identified explicitly rather than inferred from a broad stream shape. Compact completion is now recorded for all 113 source-file cards; only the original 15 remain marked as detailed cards, with their worked traces and verification obligations. The index, plan, roadmap, writing instructions, and templates use that distinction consistently.
 
 No new runtime scenarios were executed for this documentation pass. The 30 passing scenarios recorded above remain the existing runtime-validation baseline; this update adds complete notation coverage, source review, and documentation validation.
+
+## Session 2 detailed expansion — 24 November 2026
+
+All 15 Session 2 compact cards were expanded into detailed cards. Their seven-field headers remain unchanged; each detailed body supplies the exact ten sections, an explicit scope, a worked trace, and verification obligations. The collection now has **30 detailed cards and 83 compact-only cards**, with compact notation still complete for all 113 source files and 114 public names.
+
+### Executed runtime scenarios
+
+**117 named scenarios passed; zero failed**, against actual **RxJS 7.8.2** exports using **Node.js v24.22.3**. There are **111 operator-focused scenarios and six cross-card comparison scenarios**. Each of the 15 primary worked traces was executed. The checks use synchronous sources, `TestScheduler`, or `VirtualTimeScheduler`; virtual frames are interpreted as illustrative milliseconds. Source connection, predicate calls, notifications, and teardown are observed where relevant.
+
+| Operator | Scenarios | Main distinctions checked |
+| --- | ---: | --- |
+| `skip` | 6 | Prefix count, zero count, short/empty completion, errors, cancellation, independent indexes |
+| `takeLast` | 6 | Completion-time suffix, zero-count subscription bypass, error/closure discard, cancellation during flushing |
+| `skipLast` | 6 | Arrival-count delay, zero count, short/empty sources, no tail flush after error/closure |
+| `takeWhile` | 7 | First rejection, empty/all-accepted input, source/predicate errors, cancellation, scoped inclusive comparison |
+| `skipWhile` | 6 | Boundary value passes, predicate stops after opening, both phases, errors and cancellation |
+| `skipUntil` | 9 | Notifier-first setup, next versus completion, both error origins, teardown, independent gates, synchronous-error setup |
+| `first` | 9 | Early selection, no-match errors, predicate arguments, real/default undefined, silent cancellation |
+| `last` | 8 | Retained candidate, completion-time output, empty/no-match errors, default variants, failure and cancellation |
+| `single` | 9 | Sole result, three failure classes, duplicate matches, candidate discard, optional predicate |
+| `elementAt` | 9 | Zero-based selection, early closure, short-source error, construction-time negative-index error, defaults |
+| `find` | 8 | Value search, undefined fallback, predicate arguments, errors/closure, explicit reentrant boundary |
+| `findIndex` | 8 | Index search, -1 fallback, predicate arguments, errors/closure, explicit reentrant boundary |
+| `distinct` | 7 | Set equality, payload identity, flush reset/completion, setup order, per-connection state |
+| `distinctUntilChanged` | 7 | Last accepted key, selector/comparator calls, equality, failures, state before delivery |
+| `distinctUntilKeyChanged` | 6 | Retained object reference, property comparison, mutation, getters, failures, numeric equality |
+| Cross-card comparisons | 6 | Count-policy timing, predicate gates, matching results, no-match/empty outcomes, distinct history |
+| **Total** | **117** | **All passed** |
+
+The [machine-readable validation record](../planning/session-02-validation.json) lists every check name, its operator, pass status, and scope limitations. The [Session 2 comparison guide](sessions/session-02.md) presents the shared examples as readable tables.
+
+The previous checkpoint recorded 30 passing scenarios. This session adds 117 distinct named scenarios, bringing the historical record to 147; repeated runs of the same scenario are not counted again.
+
+### Findings and scope refinements
+
+- `takeLast(0)` completes without connecting upstream; `skip(0)` and `skipLast(0)` still observe their sources.
+- `takeLast` waits for normal completion and emits values individually. `skipLast` releases earlier values when newer values arrive and never flushes its held tail.
+- `takeWhile` ends on its first rejection. `skipWhile` forwards that boundary value and stops calling its predicate.
+- `skipUntil` opens on notifier `next`, not completion. In 7.8.2, a synchronous notifier error can still be followed by a custom source initializer being called with a closed subscriber; no source values reach downstream.
+- `single` distinguishes `EmptyError`, `NotFoundError`, and `SequenceError`. A matching value remains private until normal completion confirms uniqueness.
+- `find` and `findIndex` emit actual absence values on normal no-match completion, while their errors and cancellation do not synthesize those results.
+- The search cards now state the non-reentrant assumption of their at-most-one model. Two checks demonstrate the 7.8.2 boundary: a result handler that synchronously emits another matching source value can receive another result before completion.
+- `distinctUntilKeyChanged` retains an object reference and rereads its property; it does not retain a primitive property snapshot. This distinction was checked with mutation as well as ordinary immutable records.
+
+### Review and limits
+
+Every card was source-reviewed, with an independent semantic review of the three groups and the comparison guide. No compact header required changing. Source verification again matched all **117 recorded source-file Git blob hashes** against the installed RxJS 7.8.2 files.
+
+The scenarios exercise the cards' declared scopes and several explicitly discussed comparison variants, such as defaults and inclusive `takeWhile`. They are not exhaustive overload, scheduler, reentrancy, or liveness proofs. State columns in traces are explanatory models; the runtime checks inspect observable behavior rather than private state. Verification obligations remain useful additional review cases and are not all implied to have been executed.
+
+The session and coverage manifests, index formats and stream shapes, required card sections, preserved compact headers, local links/anchors, and file boundaries were checked. The results are recorded with the runtime evidence. These are executed review checks, not a claim that a repository-installed test runner or automatic generator was added.

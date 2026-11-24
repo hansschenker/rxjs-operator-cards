@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 1,
+  "session": 2,
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "status": "passed",
+  "cardReferenceVersion": "7.8.2",
+  "nodeVersion": "v24.22.3",
+  "repositoryBaseCommit": "155026d2bf88c0dd571556727a84fbc14c528820",
+  "implementationInventoryCommit": "e5351d02e225e275ac0e497c7b66eaa5f0c88791",
+  "matchingPinnedSourceFiles": 117,
+  "methodology": "Focused assertions against actual RxJS 7.8.2 exports, using synchronous sources and RxJS virtual schedulers with explicit notification, predicate, and teardown observations.",
+  "summary": {
+    "operatorScenarios": 111,
+    "comparisonScenarios": 6,
+    "totalScenarios": 117,
+    "passed": 117,
+    "failed": 0,
+    "detailedCardsExpanded": 15,
+    "everyWorkedTraceExecuted": true
+  },
+  "perOperator": {
+    "skip": 6,
+    "takeLast": 6,
+    "skipLast": 6,
+    "takeWhile": 7,
+    "skipWhile": 6,
+    "skipUntil": 9,
+    "first": 9,
+    "last": 8,
+    "single": 9,
+    "elementAt": 9,
+    "find": 8,
+    "findIndex": 8,
+    "distinct": 7,
+    "distinctUntilChanged": 7,
+    "distinctUntilKeyChanged": 6
+  },
+  "operatorChecks": [
+    {
+      "operator": "skip",
+      "name": "skip(2): first two omitted, later values retain their event times",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skip",
+      "name": "skip(0) mirrors source and opens its subscription",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skip",
+      "name": "Short and empty sources complete without a minimum accepted count",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skip",
+      "name": "An error before the skip threshold is forwarded unchanged",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skip",
+      "name": "Closing after the first admitted value cancels later delivery without completion",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skip",
+      "name": "Connections to the same live source have separate skip counters",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeLast",
+      "name": "takeLast(2): retain 4 and 5, emit both in order only at completion",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeLast",
+      "name": "takeLast(0) completes synchronously without a source subscription",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeLast",
+      "name": "Short normal completion emits the available suffix; empty input emits no value",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeLast",
+      "name": "Source failure discards a populated suffix instead of flushing it",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeLast",
+      "name": "Closing before completion drops retained values and cancels upstream",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeLast",
+      "name": "Closing on the first flushed value prevents later retained delivery and completion",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipLast",
+      "name": "skipLast(2): earlier values are released by new arrivals; final two are discarded",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipLast",
+      "name": "skipLast(0) mirrors source and opens its subscription",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipLast",
+      "name": "Short and empty completion never flush a held tail",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipLast",
+      "name": "An error follows already released values without flushing the held tail",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipLast",
+      "name": "Closure keeps prior deliveries but drops the held tail and future work",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipLast",
+      "name": "Irregular arrival times determine release rather than a fixed elapsed duration",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeWhile",
+      "name": "Default takeWhile omits the first rejection, completes there, and cancels later source work",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeWhile",
+      "name": "Rejecting the first value produces empty completion and closes upstream",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeWhile",
+      "name": "All-accepted source and empty source both use normal source completion",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeWhile",
+      "name": "Source failure is forwarded after prior accepted values",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeWhile",
+      "name": "A thrown predicate error terminates with error rather than ordinary rejection",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeWhile",
+      "name": "Consumer closure stops further predicate evaluation without completion",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "takeWhile",
+      "name": "The explicitly separate inclusive=true variant emits its rejection before completion",
+      "status": "passed",
+      "scope": "comparison note only; main card scope is inclusive=false"
+    },
+    {
+      "operator": "skipWhile",
+      "name": "First rejection opens the gate permanently, preserving a later predicate-matching value",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipWhile",
+      "name": "False on the first value forwards everything and prevents future predicate calls",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipWhile",
+      "name": "All-skipped and empty sources complete without values",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipWhile",
+      "name": "Source error is forwarded both before and after the forwarding gate opens",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipWhile",
+      "name": "A predicate throw while skipping errors and closes upstream without opening the gate",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipWhile",
+      "name": "Consumer closure tears down in either phase without a terminal notification",
+      "status": "passed",
+      "scope": "card scope"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "worked trace opens at 30 and forwards c at 40",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "synchronous notifier next opens before synchronous source",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "notifier completion without next keeps gate closed",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "source completion closes a still-silent notifier",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "source error forwards original error and closes both connections",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "notifier error forwards original error and closes both connections",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "downstream close releases both connections silently",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "synchronous notifier error still invokes closed source initializer",
+      "status": "passed"
+    },
+    {
+      "operator": "skipUntil",
+      "name": "live notifier history is not replayed and gates are per connection",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "worked trace returns first even value and cancels at 20",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "empty source produces EmptyError",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "nonempty source with no match produces EmptyError",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "source error is preserved and defaults do not recover errors",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "predicate exception errors and stops a cooperative synchronous source",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "explicit undefined default waits for normal no-match completion",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "undefined matching payload is a real result",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "downstream close ends an unfinished search silently",
+      "status": "passed"
+    },
+    {
+      "operator": "first",
+      "name": "omitted predicate accepts first value and differs from take1 on empty",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "worked trace retains latest even value and emits only at 50",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "empty source produces EmptyError",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "nonempty source with no match produces EmptyError",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "source error discards pending match and does not select a default",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "predicate exception after a candidate discards it",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "explicit undefined default replaces no-match error at completion",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "undefined candidate is present and omitted predicate accepts all values",
+      "status": "passed"
+    },
+    {
+      "operator": "last",
+      "name": "nonterminating source stays silent and cancellation discards candidate",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "worked trace emits sole match only when source completes at 50",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "empty source produces EmptyError regardless of supplied predicate",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "nonempty rejected source produces NotFoundError",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "second matching value errors immediately even when values are equal",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "predicate exception after sole candidate forwards unchanged error",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "source error after candidate discards it",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "downstream close cannot certify sole pending candidate",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "undefined sole candidate is a value rather than absence",
+      "status": "passed"
+    },
+    {
+      "operator": "single",
+      "name": "omitted predicate requires exactly one total value",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "worked trace selects zero-based index1 and cancels at 20",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "short source errors only on completion",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "empty source has no zero-th value",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "source error is preserved rather than replaced by a default",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "negative index throws during construction even with a default",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "explicit undefined default emits only on short-source completion",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "undefined at a valid index is a real payload",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "downstream close before target is silent and releases source",
+      "status": "passed"
+    },
+    {
+      "operator": "elementAt",
+      "name": "index0 closes a cooperative synchronous source after one value",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "worked trace: first match, predicate arguments, immediate upstream closure",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "empty normal completion emits the no-match payload",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "finite unmatched search emits its fallback only at completion",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "source error has no no-match fallback",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "predicate failure closes upstream without fallback",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "downstream closure is silent and produces no fallback",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "undefined can be a matching first payload",
+      "status": "passed"
+    },
+    {
+      "operator": "findIndex",
+      "name": "worked trace: first match, predicate arguments, immediate upstream closure",
+      "status": "passed"
+    },
+    {
+      "operator": "findIndex",
+      "name": "empty normal completion emits the no-match payload",
+      "status": "passed"
+    },
+    {
+      "operator": "findIndex",
+      "name": "finite unmatched search emits its fallback only at completion",
+      "status": "passed"
+    },
+    {
+      "operator": "findIndex",
+      "name": "source error has no no-match fallback",
+      "status": "passed"
+    },
+    {
+      "operator": "findIndex",
+      "name": "predicate failure closes upstream without fallback",
+      "status": "passed"
+    },
+    {
+      "operator": "findIndex",
+      "name": "downstream closure is silent and produces no fallback",
+      "status": "passed"
+    },
+    {
+      "operator": "findIndex",
+      "name": "undefined can be a matching first payload",
+      "status": "passed"
+    },
+    {
+      "operator": "distinct",
+      "name": "worked trace: original payloads, flush next, inert flush completion",
+      "status": "passed"
+    },
+    {
+      "operator": "distinct",
+      "name": "SameValueZero and object identity",
+      "status": "passed"
+    },
+    {
+      "operator": "distinct",
+      "name": "selector error closes source and flushes",
+      "status": "passed"
+    },
+    {
+      "operator": "distinct",
+      "name": "flush error terminates source delivery",
+      "status": "passed"
+    },
+    {
+      "operator": "distinct",
+      "name": "source completion closes a still-active flush notifier",
+      "status": "passed"
+    },
+    {
+      "operator": "distinct",
+      "name": "synchronous source subscribes before synchronous flushes",
+      "status": "passed"
+    },
+    {
+      "operator": "distinct",
+      "name": "separate subscriptions have independent key sets",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilChanged",
+      "name": "worked trace compares the last accepted key",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilChanged",
+      "name": "default strict equality: NaN, signed zeros, and object identity",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilChanged",
+      "name": "selector runs on every input and undefined is a present key",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilChanged",
+      "name": "first key-selector failure emits no first value",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilChanged",
+      "name": "comparator failure closes upstream",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilChanged",
+      "name": "accepted key is installed before reentrant delivery",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilChanged",
+      "name": "separate connections have independent accepted keys",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilKeyChanged",
+      "name": "worked trace retains accepted objects and forwards original references",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilKeyChanged",
+      "name": "retained object mutation differs from a retained primitive key",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilKeyChanged",
+      "name": "custom comparator receives properties of the last accepted object",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilKeyChanged",
+      "name": "first object skips property access, subsequent getter failure errors",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilKeyChanged",
+      "name": "custom comparator failure is an error after the first object",
+      "status": "passed"
+    },
+    {
+      "operator": "distinctUntilKeyChanged",
+      "name": "default property equality uses strict equality",
+      "status": "passed"
+    },
+    {
+      "operator": "find",
+      "name": "result delivery can reenter the source before completion; at-most-one model needs a non-reentrant scope",
+      "status": "passed",
+      "observed": [
+        1,
+        2,
+        "complete"
+      ],
+      "scope": "Explicit implementation boundary outside the non-reentrant cardinality model"
+    },
+    {
+      "operator": "findIndex",
+      "name": "result delivery can reenter the source before completion; at-most-one model needs a non-reentrant scope",
+      "status": "passed",
+      "observed": [
+        0,
+        1,
+        "complete"
+      ],
+      "scope": "Explicit implementation boundary outside the non-reentrant cardinality model"
+    }
+  ],
+  "comparisonChecks": [
+    {
+      "name": "four count policies preserve different values and delivery times",
+      "status": "passed"
+    },
+    {
+      "name": "filter, takeWhile, and skipWhile treat later matches differently",
+      "status": "passed"
+    },
+    {
+      "name": "first, last, single, find, and findIndex distinguish two matching values",
+      "status": "passed"
+    },
+    {
+      "name": "nonempty no-match input distinguishes errors from absence values",
+      "status": "passed"
+    },
+    {
+      "name": "empty input distinguishes single EmptyError from find absence values",
+      "status": "passed"
+    },
+    {
+      "name": "distinct remembers a set while distinctUntilChanged remembers the last accepted value",
+      "status": "passed"
+    }
+  ],
+  "limits": [
+    "Counts describe named scenarios, not every assertion, overload, or possible execution.",
+    "The cases include clearly labeled comparison variants such as explicit defaults and inclusive takeWhile.",
+    "Worked-trace state columns are explanatory models; runtime checks observe public behavior rather than private implementation state.",
+    "No exhaustive scheduler, reentrancy, liveness, or formal-equivalence claim is made.",
+    "This manifest records executed review evidence; it is not an installed automated test suite.",
+    "find/findIndex at-most-one cardinality is explicitly scoped to non-reentrant delivery; two checks record repeated results possible before completion during synchronous feedback."
+  ],
+  "documentationChecks": {
+    "status": "passed",
+    "cards": 113,
+    "compactBlocks": 114,
+    "detailedCards": 30,
+    "compactOnlyCards": 83,
+    "session2Cards": 15,
+    "unchangedCompactHeaders": 113,
+    "markdownFiles": 127,
+    "relativeLinksAndAnchors": 622,
+    "changedExistingFiles": 21,
+    "unchangedExistingFiles": 107
+  }
+}

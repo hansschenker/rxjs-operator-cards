@@ -24,9 +24,11 @@ This repository preserves the operator-card idea developed in our discussion of 
 
 **Compact notation now covers all 113 operator source files and 114 public operator names.** Every operator has the same seven-field overview: Operator, Stream shape, State, Initial state, Value step, Ownership, and Lifecycle. The extra public name, the deprecated pipeable `onErrorResumeNext`, has its own alias block in the `onErrorResumeNextWith` card.
 
-The collection contains **15 detailed cards and 98 compact cards**. Compact cards include the operator's scope, state definitions, key behavior notes, and pinned source references. The [operator index](docs/operator-index.md) links every card and identifies its format. The [session plan](docs/session-plan.md) continues to track expansion of the compact cards into detailed explanations, traces, and verification obligations.
+The collection contains **30 detailed cards and 83 compact cards**. Compact cards include the operator's scope, state definitions, key behavior notes, and pinned source references. The [operator index](docs/operator-index.md) links every card and identifies its format. The [session plan](docs/session-plan.md) continues to track expansion of the compact cards into detailed explanations, traces, and verification obligations.
 
 The first six sessions cover 90 current operator files; the final two cover 23 deprecated forms. Four internal helpers are recorded separately. This is coverage of the pinned operators directory, including its aliases and compatibility forms; creation functions and other RxJS APIs have their own scope.
+
+**Detailed Sessions 1 and 2 are complete.** Session 3, covering time, scheduling, and delivery boundaries, is the next planned batch for 25 November 2026.
 
 ## Detailed cards from Session 1
 
@@ -40,6 +42,18 @@ The first six sessions cover 90 current operator files; the final two cover 23 d
 | Time | [debounceTime](cards/debounceTime.md) |
 | Inner-stream coordination | [mergeMap](cards/mergeMap.md), [concatMap](cards/concatMap.md), [switchMap](cards/switchMap.md), [exhaustMap](cards/exhaustMap.md) |
 | Sharing and replay | [shareReplay](cards/shareReplay.md) |
+
+## Detailed cards from Session 2
+
+**Completed on 24 November 2026.** The [comparison guide](docs/sessions/session-02.md) shows the differences in delivered values, delivery times, remembered state, and missing-result behavior.
+
+| Family | Cards |
+| --- | --- |
+| Count boundaries and trailing values | [skip](cards/skip.md), [takeLast](cards/takeLast.md), [skipLast](cards/skipLast.md) |
+| Predicate and notifier boundaries | [takeWhile](cards/takeWhile.md), [skipWhile](cards/skipWhile.md), [skipUntil](cards/skipUntil.md) |
+| Required selection | [first](cards/first.md), [last](cards/last.md), [single](cards/single.md), [elementAt](cards/elementAt.md) |
+| Search results | [find](cards/find.md), [findIndex](cards/findIndex.md) |
+| Distinct values | [distinct](cards/distinct.md), [distinctUntilChanged](cards/distinctUntilChanged.md), [distinctUntilKeyChanged](cards/distinctUntilKeyChanged.md) |
 
 ## What a card contains
 

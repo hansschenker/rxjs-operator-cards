@@ -1,8 +1,8 @@
 # Operator index
 
-**Reference:** RxJS 7.8.2 · **Compact notation:** 113 source-file cards / 114 public names · **Detailed cards:** 15
+**Reference:** RxJS 7.8.2 · **Compact notation:** 113 source-file cards / 114 public names · **Detailed cards:** 30
 
-Every inventoried operator now has the same seven-field compact overview. The 15 **Detailed** cards add the full explanation, event/action table, worked trace, and verification obligations. The remaining 98 **Compact** cards provide a scoped overview, local notation and behavior notes, and pinned source references.
+Every inventoried operator now has the same seven-field compact overview. The 30 **Detailed** cards add the full explanation, event/action table, worked trace, and verification obligations. The remaining 83 **Compact** cards provide a scoped overview, local notation and behavior notes, and pinned source references.
 
 Stream shapes below are copied from each card’s opening block after its stated arguments and policy have been chosen. They describe explanatory dataflow, not every TypeScript overload. `T?` remains an Observable with at most one emitted value; it is not a scalar or an eventual-emission guarantee. Read each card’s scope, ownership, and lifecycle together.
 
@@ -32,25 +32,27 @@ The groups follow the [session plan](session-plan.md). Sessions 1–6 contain 90
 
 ## Selection, boundaries, and distinct values
 
-**Session 2:** 15 cards · Compact notation complete
+**Session 2:** 15 cards · Compact notation and detailed expansion complete
+
+See the [Session 2 comparison guide](sessions/session-02.md) for side-by-side traces and result-selection outcomes.
 
 | Operator | Stream shape | Format |
 | --- | --- | --- |
-| [skip](../cards/skip.md) | `T* → T*` | Compact |
-| [takeLast](../cards/takeLast.md) | `T* → T* (at most n values)` | Compact |
-| [skipLast](../cards/skipLast.md) | `T* → T*` | Compact |
-| [takeWhile](../cards/takeWhile.md) | `T* → T*` | Compact |
-| [skipWhile](../cards/skipWhile.md) | `T* → T*` | Compact |
-| [skipUntil](../cards/skipUntil.md) | `T* → T*` | Compact |
-| [first](../cards/first.md) | `T* → T?` | Compact |
-| [last](../cards/last.md) | `T* → T?` | Compact |
-| [single](../cards/single.md) | `T* → T?` | Compact |
-| [elementAt](../cards/elementAt.md) | `T* → T?` | Compact |
-| [find](../cards/find.md) | `T* → (T \| Undefined)?` | Compact |
-| [findIndex](../cards/findIndex.md) | `T* → (Nat \| -1)?` | Compact |
-| [distinct](../cards/distinct.md) | `T* → T*` | Compact |
-| [distinctUntilChanged](../cards/distinctUntilChanged.md) | `T* → T*` | Compact |
-| [distinctUntilKeyChanged](../cards/distinctUntilKeyChanged.md) | `T* → T*` | Compact |
+| [skip](../cards/skip.md) | `T* → T*` | Detailed |
+| [takeLast](../cards/takeLast.md) | `T* → T* (at most n values)` | Detailed |
+| [skipLast](../cards/skipLast.md) | `T* → T*` | Detailed |
+| [takeWhile](../cards/takeWhile.md) | `T* → T*` | Detailed |
+| [skipWhile](../cards/skipWhile.md) | `T* → T*` | Detailed |
+| [skipUntil](../cards/skipUntil.md) | `T* → T*` | Detailed |
+| [first](../cards/first.md) | `T* → T?` | Detailed |
+| [last](../cards/last.md) | `T* → T?` | Detailed |
+| [single](../cards/single.md) | `T* → T?` | Detailed |
+| [elementAt](../cards/elementAt.md) | `T* → T?` | Detailed |
+| [find](../cards/find.md) | `T* → (T \| Undefined)?` | Detailed |
+| [findIndex](../cards/findIndex.md) | `T* → (Nat \| -1)?` | Detailed |
+| [distinct](../cards/distinct.md) | `T* → T*` | Detailed |
+| [distinctUntilChanged](../cards/distinctUntilChanged.md) | `T* → T*` | Detailed |
+| [distinctUntilKeyChanged](../cards/distinctUntilKeyChanged.md) | `T* → T*` | Detailed |
 
 ## Time, scheduling, and delivery boundaries
 
@@ -202,6 +204,6 @@ The deprecated pipeable export below shares its implementation file with `onErro
 
 ## Detailed expansion
 
-The [session plan](session-plan.md) and [session manifest](../planning/operator-sessions.json) track expansion of existing compact cards into detailed cards. `compactOperators` records notation coverage; `completedOperators` records detailed completion. Session 1 is detailed, and Sessions 2–8 remain available for that expansion.
+The [session plan](session-plan.md) and [session manifest](../planning/operator-sessions.json) track expansion of existing compact cards into detailed cards. `compactOperators` records notation coverage; `completedOperators` records detailed completion. Sessions 1–2 are detailed, and Sessions 3–8 remain available for that expansion.
 
 See the [notation guide](notation.md#8-compact-operator-notation), [validation record](validation.md), and [pinned source inventory](../planning/source-inventory.json) for the conventions and evidence behind this collection.

@@ -4,9 +4,9 @@
 
 Maintain **one card per operator source file**, grouped by related behavior into sessions of **15 operators**. All **113 operator files** now have compact notation. The **seven sessions of 15 and one final session of eight** continue to organize detailed expansion.
 
-**Compact notation: complete for all 113 operators. Detailed expansion: Session 1 complete; Session 2 is next.**
+**Compact notation: complete for all 113 operators. Detailed expansion: Sessions 1–2 complete; Session 3 is next.**
 
-Session 1 established 15 detailed cards on 23 November 2026, including [startWith](../cards/startWith.md). On 24 November 2026, the requested compact-notation pass added the remaining 98 cards. The collection now has **113 compact overviews, with 15 detailed explanations and 98 detailed expansions planned**.
+Session 1 established 15 detailed cards on 23 November 2026, including [startWith](../cards/startWith.md). On 24 November 2026, the requested compact-notation pass added the remaining 98 cards. Session 2 then expanded another 15 cards on 24 November 2026. The collection now has **113 compact overviews, with 30 detailed explanations and 83 detailed expansions planned**. See the [Session 2 comparison guide](sessions/session-02.md) and [validation record](validation.md#session-2-detailed-expansion--24-november-2026).
 
 ## Inventory and counting rules
 
@@ -36,7 +36,7 @@ The dates below preserve the original proposed cadence of **one session per cale
 | Session | Original target date | Focus | Operators | Cumulative target | Detailed status |
 | --- | --- | --- | ---: | ---: | --- |
 | [1](#session-1) | 23 November 2026 | Core behavior and state | 15 | 15 | Complete |
-| [2](#session-2) | 24 November 2026 | Selection, boundaries, and distinct values | 15 | 30 | Planned |
+| [2](#session-2) | 24 November 2026 | Selection, boundaries, and distinct values | 15 | 30 | Complete |
 | [3](#session-3) | 25 November 2026 | Time, scheduling, and delivery boundaries | 15 | 45 | Planned |
 | [4](#session-4) | 26 November 2026 | Grouping, aggregation, and sequence comparison | 15 | 60 | Planned |
 | [5](#session-5) | 27 November 2026 | Combining, flattening, and expanding streams | 15 | 75 | Planned |
@@ -48,7 +48,7 @@ Sessions 1–6 cover the **90 current operator files**. Sessions 7–8 cover all
 
 ## Session batches
 
-Every name below links to its pinned source and existing card. **Detailed** marks the original full explanations; **Compact** marks a completed seven-field notation card whose detailed expansion remains planned. Both formats state their scope and reference RxJS 7.8.2.
+Every name below links to its pinned source and existing card. **Detailed** marks the completed full explanations; **Compact** marks a completed seven-field notation card whose detailed expansion remains planned. Both formats state their scope and reference RxJS 7.8.2.
 
 ## Session 1
 
@@ -78,29 +78,29 @@ Establish the card vocabulary: one-value rules, remembered state, completion, ne
 ## Session 2
 
 **24 November 2026 — Selection, boundaries, and distinct values**  
-**Batch:** 15 operators · **Compact:** Complete · **Detailed:** Planned
+**Batch:** 15 operators · **Compact:** Complete · **Detailed:** Complete
 
 Distinguish passing, skipping, and ending a stream; compare first/last/single-result requirements and the history remembered by distinct operators.
 
 | Position | Operator source | Card |
 | --- | --- | --- |
-| 1 | [`skip`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skip.ts) | [Compact](../cards/skip.md) |
-| 2 | [`takeLast`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/takeLast.ts) | [Compact](../cards/takeLast.md) |
-| 3 | [`skipLast`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skipLast.ts) | [Compact](../cards/skipLast.md) |
-| 4 | [`takeWhile`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/takeWhile.ts) | [Compact](../cards/takeWhile.md) |
-| 5 | [`skipWhile`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skipWhile.ts) | [Compact](../cards/skipWhile.md) |
-| 6 | [`skipUntil`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skipUntil.ts) | [Compact](../cards/skipUntil.md) |
-| 7 | [`first`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/first.ts) | [Compact](../cards/first.md) |
-| 8 | [`last`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/last.ts) | [Compact](../cards/last.md) |
-| 9 | [`single`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/single.ts) | [Compact](../cards/single.md) |
-| 10 | [`elementAt`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/elementAt.ts) | [Compact](../cards/elementAt.md) |
-| 11 | [`find`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/find.ts) | [Compact](../cards/find.md) |
-| 12 | [`findIndex`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/findIndex.ts) | [Compact](../cards/findIndex.md) |
-| 13 | [`distinct`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/distinct.ts) | [Compact](../cards/distinct.md) |
-| 14 | [`distinctUntilChanged`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/distinctUntilChanged.ts) | [Compact](../cards/distinctUntilChanged.md) |
-| 15 | [`distinctUntilKeyChanged`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/distinctUntilKeyChanged.ts) | [Compact](../cards/distinctUntilKeyChanged.md) |
+| 1 | [`skip`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skip.ts) | [Detailed](../cards/skip.md) |
+| 2 | [`takeLast`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/takeLast.ts) | [Detailed](../cards/takeLast.md) |
+| 3 | [`skipLast`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skipLast.ts) | [Detailed](../cards/skipLast.md) |
+| 4 | [`takeWhile`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/takeWhile.ts) | [Detailed](../cards/takeWhile.md) |
+| 5 | [`skipWhile`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skipWhile.ts) | [Detailed](../cards/skipWhile.md) |
+| 6 | [`skipUntil`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/skipUntil.ts) | [Detailed](../cards/skipUntil.md) |
+| 7 | [`first`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/first.ts) | [Detailed](../cards/first.md) |
+| 8 | [`last`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/last.ts) | [Detailed](../cards/last.md) |
+| 9 | [`single`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/single.ts) | [Detailed](../cards/single.md) |
+| 10 | [`elementAt`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/elementAt.ts) | [Detailed](../cards/elementAt.md) |
+| 11 | [`find`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/find.ts) | [Detailed](../cards/find.md) |
+| 12 | [`findIndex`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/findIndex.ts) | [Detailed](../cards/findIndex.md) |
+| 13 | [`distinct`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/distinct.ts) | [Detailed](../cards/distinct.md) |
+| 14 | [`distinctUntilChanged`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/distinctUntilChanged.ts) | [Detailed](../cards/distinctUntilChanged.md) |
+| 15 | [`distinctUntilKeyChanged`](https://github.com/ReactiveX/rxjs/blob/e5351d02e225e275ac0e497c7b66eaa5f0c88791/src/internal/operators/distinctUntilKeyChanged.ts) | [Detailed](../cards/distinctUntilKeyChanged.md) |
 
-The main comparisons for Session 2 are `takeWhile`/ `skipWhile`, `takeUntil`/ `skipUntil`, `first`/ `last`/ `single`, and the three `distinct` forms. Use the existing compact cards as the starting point and expand their explanation and verification sections.
+The main comparisons for Session 2 are `takeWhile`/ `skipWhile`, `takeUntil`/ `skipUntil`, `first`/ `last`/ `single`, and the three `distinct` forms. All 15 cards now retain their compact overview and include the detailed explanation, trace, and verification obligations. The [comparison guide](sessions/session-02.md) presents the common examples together.
 
 ## Session 3
 
@@ -284,7 +284,7 @@ A session's detailed status is complete when all its assigned cards meet the det
 
 ### Resume commands
 
-- **Next:** “Expand operator-card Session 2 into detailed cards.”
+- **Next:** “Run operator-card Session 3.”
 - **Later:** “Continue the next detailed operator-card session.”
 
 Read repository progress when resuming; the manifest is more reliable than a remembered session number.
@@ -296,7 +296,7 @@ Read repository progress when resuming; the manifest is more reliable than a rem
 - The four helper files have no operator-card assignment.
 - The extra pipeable alias has an explicit required home in Session 6.
 - All 113 operator cards have compact notation; the extra public alias also has its own seven-field block.
-- Only the 15 detailed cards from Session 1 appear in `completedOperators`; the 98 compact-only cards are not marked as detailed expansions.
+- The 30 detailed cards from Sessions 1–2 appear in `completedOperators`; the 83 compact-only cards are not marked as detailed expansions.
 - Current and deprecated operator-file counts are 90 and 23.
 - Deprecated overloads of current operators do not move the whole operator into a compatibility session.
 
