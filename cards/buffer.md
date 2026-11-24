@@ -1,5 +1,15 @@
 # buffer
 
+```text
+Operator:       buffer
+Stream shape:   T* → (T[])*
+State:          T[] — current batch
+Initial state:  []
+Value step:     (T[] × T) → (T[] × Action[]) — append; no immediate output
+Ownership:      One batch and source/notifier subscription pair per operator subscription
+Lifecycle:      Complete: flush even an empty batch, then complete; error: discard and error; cancel: discard silently
+```
+
 **Family:** Notifier grouping · **Reference:** RxJS 7.8.2 · **Scope:** Observable source and Observable closing notifier
 
 > Collect values in an array, publish it on each boundary value, and begin collecting the next group.

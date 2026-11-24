@@ -1,5 +1,15 @@
 # window
 
+```text
+Operator:       window
+Stream shape:   T* → (T*)*
+State:          LiveWindow<T> — current live inner
+Initial state:  Fresh window, published before source subscription
+Value step:     (LiveWindow<T> × T) → (LiveWindow<T> × Action[]) — deliver to inner observers
+Ownership:      One window and source/boundary subscription pair per outer subscription
+Lifecycle:      Source complete finishes inner/outer; errors fail both; outer cancellation disposes inner without completion
+```
+
 **Family:** Notifier grouping · **Reference:** RxJS 7.8.2 · **Scope:** Observable source and Observable boundary notifier
 
 > Publish a live inner stream immediately, route arriving values into it, and replace it on each boundary value.
@@ -26,6 +36,8 @@ Divide readings into sessions. Publish each session stream immediately so observ
 An outer connection handling `b` boundaries produces `b + 1` windows. Receiving their payloads requires timely inner subscriptions.
 
 ## Remembers
+
+`LiveWindow<T>` in the compact header names the current Subject-backed window. A source-value action delivers to that window's observers; it does not publish another outer value.
 
 Each outer connection owns a current Subject-backed window and two subscriptions. The Subject multicasts without retaining payload history. Inner subscriptions have separate lifetimes; closing one does not close the outer connection.
 

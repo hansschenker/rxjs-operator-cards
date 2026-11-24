@@ -69,3 +69,19 @@ The [session plan](session-plan.md) was also checked against the upstream invent
 - Fifteen current cards are marked complete; 98 are planned. Future cards and their checks are not being represented as finished.
 
 The current files, relative links, index entries, and manifest progress were checked after this update. See [source-inventory.json](../planning/source-inventory.json) and [operator-sessions.json](../planning/operator-sessions.json) for the recorded inputs and assignment.
+
+## Compact operator notation update — 24 November 2026
+
+All 15 completed cards now begin with the same seven fields: Operator, Stream shape, State, Initial state, Value step, Ownership, and Lifecycle. The reusable template, notation guide, design, and writing instructions use the same format.
+
+The compact summaries were reviewed against the cards' scoped RxJS 7.8.2 behavior and the relevant implementations. This included indexed value processing, seeded accumulation, prefix subscription order, notifier boundaries, live windows, scheduler-owned pending values, inner admission, and shared replay state.
+
+Documentation checks passed:
+
+- Exactly one seven-field block occurs immediately after each of the 15 operator titles, with consistent label order and alignment.
+- The template contains the same seven fields, and no template placeholders remain in completed cards.
+- All pre-existing card content is preserved, including all ten required detailed sections.
+- Markdown fences are balanced, 152 relative links resolve, and the new compact-notation anchors exist.
+- `git diff --check` reports no whitespace errors.
+
+The collection still has 15 completed cards and 98 planned cards. The 30 behavioral scenarios recorded above remain the existing runtime-validation baseline; this documentation update was checked through structure validation and source review.

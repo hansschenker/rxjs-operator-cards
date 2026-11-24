@@ -1,5 +1,15 @@
 # mergeMap
 
+```text
+Operator:       mergeMap
+Stream shape:   T* → R*
+State:          InnerId[] × Nat × Bool
+Initial state:  ([], 0, false)
+Value step:     (S × T) → (S × Action[]) — open an inner; keep existing inners
+Ownership:      One state per operator subscription
+Lifecycle:      Source complete waits for all inners; errors forward and close all; cancellation closes silently
+```
+
 **Family:** Flattening · **Reference:** RxJS 7.8.2 · **Scope:** `mergeMap(project)` with unbounded concurrency; no deprecated `resultSelector`.
 
 > Each source value opens an inner stream, and values from all active inners flow onward as they arrive, allowing work to overlap.
@@ -28,6 +38,8 @@ One input does not guarantee one output. Errors, empty inners, and downstream cl
 ## Remembers
 
 Each downstream connection owns an active-inner count, inner subscriptions, projection index, and source-completed flag. The implementation's waiting queue remains unused under this unbounded policy.
+
+In the compact state, `InnerId[]` identifies the active inner subscriptions, `Nat` is the next projection index, and `Bool` records source completion. The active count is the length of the list. These are symbolic subscription identities, not buffered inner values.
 
 ## Event → action
 

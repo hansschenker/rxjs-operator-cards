@@ -1,5 +1,15 @@
 # filter
 
+```text
+Operator:       filter
+Stream shape:   T* → T*
+State:          Nat — source index, including rejected values
+Initial state:  0
+Value step:     (Nat × T) → (Nat × Option<T>)
+Ownership:      One state per operator subscription
+Lifecycle:      Forward completion/error; predicate errors terminate; cancellation closes upstream silently
+```
+
 **Family:** Value selection · **Reference:** RxJS 7.8.2 · **Scope:** Boolean predicate overload without deprecated `thisArg`
 
 > Keep an arriving value when the supplied predicate accepts it, so downstream consumers receive only values relevant to their task.

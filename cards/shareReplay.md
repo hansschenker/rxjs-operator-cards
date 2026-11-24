@@ -1,5 +1,15 @@
 # shareReplay
 
+```text
+Operator:       shareReplay
+Stream shape:   T* → T*
+State:          ReplayState<T>
+Initial state:  { latest: None, observers: [], upstream: None, phase: Fresh }
+Value step:     (S × T) → (S × Action[]) — replace latest value and multicast to current observers
+Ownership:      One shared state per resulting Observable; observers share its cache and connection
+Lifecycle:      Complete: notify and retain cache; error: reset then notify; last observer leaving unfinished source: close/reset silently
+```
+
 **Family:** Sharing · **Reference:** RxJS 7.8.2 · **Scope:** `shareReplay({ bufferSize: 1, refCount: true })`, with an unbounded replay time window.
 
 > Share one active upstream execution among connected observers and give each new observer the latest buffered value.
@@ -29,6 +39,8 @@ The operator does not create an initial value when the source has emitted none.
 ## Remembers
 
 The resulting shared Observable owns a replay subject, its one-value buffer, current upstream connection, observer reference count, and terminal status. This state is shared at this boundary rather than duplicated for every observer.
+
+The compact alias `ReplayState<T>` has fields `latest: Option<T>`, `observers: ObserverId[]`, `upstream: Option<SourceId>`, and `phase: Fresh | Active | Complete`. `ObserverId` and `SourceId` identify connected observers and the upstream subscription; the observer list determines the reference count. This summarizes the replay subject's retained value and observers; it does not introduce an extra replay store. `Fresh` is the state before the first observer connects or after a reset. The value step applies while the shared source is active; observer arrival/departure and terminal events follow the table below.
 
 ## Event → action
 

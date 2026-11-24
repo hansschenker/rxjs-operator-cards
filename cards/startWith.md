@@ -1,5 +1,15 @@
 # startWith
 
+```text
+Operator:       startWith
+Stream shape:   T* → (P | T)*
+State:          Prefix(Nat) | Source — prefix cursor or source-forwarding phase
+Initial state:  Prefix(0)
+Value step:     (Source × T) → (Source × T)
+Ownership:      One state per operator subscription; prefix objects are retained by reference
+Lifecycle:      Emit prefixes before source subscription; forward terminals; cancellation closes silently
+```
+
 **Family:** Sequence prefix · **Reference:** RxJS 7.8.2 · **Scope:** Ordinary variadic prefix values; no deprecated scheduler overload
 
 > Emit supplied starting values before connecting to the source, then forward its values so consumers have an initial representation while awaiting later updates.
@@ -29,6 +39,8 @@ A nonempty prefix yields a nonempty output when downstream stays open to receive
 ## Remembers
 
 The operator retains the supplied prefix values. Each connection owns its progress through the prefix and subsequent source subscription. Objects are retained by reference, not cloned; separate connections can receive the same object.
+
+In the compact notation, `Prefix(i)` identifies the next prefix argument to deliver, and `Source` identifies the later forwarding phase. The value step describes source arrivals in that phase; prefix delivery and the transition to source subscription occur during connection setup.
 
 ## Event → action
 

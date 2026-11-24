@@ -156,10 +156,10 @@ Neither simplified type determines synchronous/asynchronous delivery, replay, or
 ## 6. Scheduler and closing action
 
 ```text
-Action = () → ()
-Close  = () → ()
+ScheduledAction = () → ()
+Close           = () → ()
 
-Schedule ≈ Action → Close
+Schedule ≈ ScheduledAction → Close
 ```
 
 Expanding both names yields the talk's shape:
@@ -173,7 +173,7 @@ Timing behavior requires a clock and delay:
 ```text
 Scheduler = struct {
   Time() now;
-  Close(Action, Duration) schedule;
+  Close(ScheduledAction, Duration) schedule;
 }
 ```
 
@@ -186,3 +186,47 @@ This is a teaching abstraction. Actual RxJS scheduling supports state, reschedul
 Those choices belong in the card's event/action and lifecycle sections. Optional future refinements may encode more of them formally, but this edition makes no claim to be a complete behavioral type system.
 
 See the [operator index](operator-index.md), [template](../templates/operator-card.md), and [references](references.md).
+
+## 8. Compact operator notation
+
+Each operator card begins with a fenced `text` block containing the same seven fields. Read Stream shape as the external dataflow, State and Initial state as its memory, Value step as the local source-value transition, and Ownership and Lifecycle as its execution context.
+
+For example, a `pairwise` value model reads:
+
+```text
+Operator:       pairwise
+Stream shape:   T* → (T × T)*
+State:          Option<T>
+Initial state:  None
+Value step:     (Option<T> × T) → (Option<T> × Option<T × T>)
+Ownership:      One state per operator subscription
+Lifecycle:      Forward completion/error; cancellation closes silently
+```
+
+### Local values, memory, and actions
+
+| Form | Meaning in the compact block |
+| --- | --- |
+| `Option<T>` | Local presence: `None` or `Some(value)`; the stored value may itself be `null` or `undefined` |
+| `Unit` | A single state with no remembered data; its value is written `()` |
+| `Nat` | A nonnegative integer, such as a zero-based index or a count |
+| `Bool` | `false` or `true` |
+| `S` | The operator-specific state type described in the State row |
+| `T[]` | A finite array of values, in memory or as one emitted payload |
+| `Action[]` | A finite ordered list of actions selected by the step; `[]` means no action |
+| `Time` | A reading from the specified scheduler's clock |
+| `TimerId`, `InnerId` | Symbolic identities of owned scheduled work or inner subscriptions |
+
+`Option<T>` is a local value container, distinct from the stream-cardinality notation `T?`. In an output position of a value step, `None` means no downstream value for that step; it never means emitting `undefined`. Likewise, `Action[]` is an ordinary finite list, never an Observable of actions.
+
+Actions can include delivering a value or terminal notification, opening or closing a subscription, or scheduling or canceling work. Their order is significant. Per-card state aliases are explained in **Remembers**. Operator arguments such as the projection, count, or duration are fixed parameters of the card's scoped rule rather than newly supplied inputs at each step.
+
+### Scope of the summary
+
+The State row describes the memory relevant to an active execution, plus completion flags that are needed while other work remains. Overall closure is governed by Lifecycle and the full event/action table. A compact header is a readable summary, not a complete six-tuple or a claim to model every implementation detail.
+
+Value step normally describes a source `next` while the relevant connection is open, assuming a supplied function returns normally. A timed step can include an explicit `Time` input read from the scheduler. If the result is an ordinary value or `Option` value, it is the local downstream-value result. If the result is `Action[]`, the card also needs explicit coordination or resource decisions. Setup, timer, notifier, inner, completion, error, and cancellation events remain explicit in the card's event/action table. For higher-order operators, distinguish outer-value processing from inner-value forwarding.
+
+Initial state is read together with the Connect row: setup may emit prefixes or an initial window, open a notifier before the source, or complete without ever subscribing upstream. State ownership must identify sharing boundaries; observing a shared source does not automatically share downstream operator state.
+
+The compact block is interpreted under the card's **Scope** declaration immediately below it. Error and cancellation can interrupt processing. These explanatory signatures do not enforce pure user functions, clone mutable seeds, or establish equivalence for every scheduler and reentrant execution.

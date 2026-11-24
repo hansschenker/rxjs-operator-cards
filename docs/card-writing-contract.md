@@ -8,6 +8,10 @@ Use **Intuition → Specification → Verification**. Explain what flows, what c
 
 ## Required parts
 
+Begin immediately after the operator's title with the seven-line fenced `text` block from [the template](../templates/operator-card.md), in this order: **Operator**, **Stream shape**, **State**, **Initial state**, **Value step**, **Ownership**, **Lifecycle**. Keep these labels unchanged across cards. The block summarizes the card's stated scope; tailor its memory, initialization, ownership, and termination rules to the operator.
+
+Use `Option<T>` for an optional local value and `Action[]` for a finite ordered list of actions. `S` abbreviates the type in the State row. Describe source-value processing in Value step; keep the full event and lifecycle rules in the existing sections. The [compact-notation guide](notation.md#8-compact-operator-notation) defines the shared symbols and assumptions.
+
 Use the headings in [the template](../templates/operator-card.md): type shape; intuition; local versus whole-stream behavior; remembered state; event/action table; time, cancellation, and sharing; worked trace; verification obligations; common confusion; and primary references.
 
 Keep each initial card concise enough to read independently. State the overload or policy being described. Optional overloads can be added later as explicit variants.
