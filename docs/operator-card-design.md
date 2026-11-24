@@ -10,6 +10,8 @@ Operator description = Type shape + Behavior rules
 
 ## Intuition → Specification → Verification
 
+Compact cards establish the scoped notation and essential behavior notes. Detailed cards develop the same foundation through the stages below, adding event/action tables, traces, and verification obligations.
+
 ### Intuition
 
 Start with what flows and what the next event changes. For example, `switchMap` keeps the latest accepted inner connection; `buffer` publishes collected arrays; `scan` publishes remembered state after each input.
@@ -70,6 +72,6 @@ This repository's first edition does not implement that generator or claim forma
 
 Every card opens with the same seven-line compact notation block: **Operator**, **Stream shape**, **State**, **Initial state**, **Value step**, **Ownership**, and **Lifecycle**. This gives readers a consistent overview of the dataflow, local memory, value processing, and lifetime before they read the explanation. The [notation guide](notation.md#8-compact-operator-notation) defines its symbols and scope.
 
-See the [template](../templates/operator-card.md). State only what applies, but do not omit a lifecycle or ownership rule merely because the type shape is simple.
+Use the [compact template](../templates/compact-operator-card.md) for the notation and scope notes, or the [detailed template](../templates/operator-card.md) to develop the full explanation. State only what applies, but do not omit a lifecycle or ownership rule merely because the type shape is simple.
 
-The first examples are indexed in [operator-index.md](operator-index.md). Coverage beyond those cards is tracked in the [roadmap](roadmap.md).
+All 113 source-file cards are linked in [operator-index.md](operator-index.md). Fifteen contain the detailed sections; the remaining 98 provide compact notation, scope notes, and references. The [roadmap](roadmap.md) tracks detailed expansion separately from complete compact coverage.

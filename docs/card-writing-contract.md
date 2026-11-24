@@ -8,13 +8,18 @@ Use **Intuition → Specification → Verification**. Explain what flows, what c
 
 ## Required parts
 
-Begin immediately after the operator's title with the seven-line fenced `text` block from [the template](../templates/operator-card.md), in this order: **Operator**, **Stream shape**, **State**, **Initial state**, **Value step**, **Ownership**, **Lifecycle**. Keep these labels unchanged across cards. The block summarizes the card's stated scope; tailor its memory, initialization, ownership, and termination rules to the operator.
+Begin immediately after the operator's title with the seven-line fenced `text` block from either template, in this order: **Operator**, **Stream shape**, **State**, **Initial state**, **Value step**, **Ownership**, **Lifecycle**. Keep these labels unchanged across cards. The block summarizes the card's stated scope; tailor its memory, initialization, ownership, and termination rules to the operator.
 
 Use `Option<T>` for an optional local value and `Action[]` for a finite ordered list of actions. `S` abbreviates the type in the State row. Describe source-value processing in Value step; keep the full event and lifecycle rules in the existing sections. The [compact-notation guide](notation.md#8-compact-operator-notation) defines the shared symbols and assumptions.
 
-Use the headings in [the template](../templates/operator-card.md): type shape; intuition; local versus whole-stream behavior; remembered state; event/action table; time, cancellation, and sharing; worked trace; verification obligations; common confusion; and primary references.
+Two formats are supported:
+
+- **Compact:** follow [the compact template](../templates/compact-operator-card.md). Include the seven-line header, reference/version and scope metadata, a behavior sentence, definitions of local state symbols, essential time/cancellation/sharing notes, and primary references. Mark the format as Compact. This is the requested notation coverage, with no claim that detailed traces or runtime tests have already been written.
+- **Detailed:** use the headings in [the detailed template](../templates/operator-card.md): type shape; intuition; local versus whole-stream behavior; remembered state; event/action table; time, cancellation, and sharing; worked trace; verification obligations; common confusion; and primary references. Preserve the compact overview when expanding a card.
 
 Keep each initial card concise enough to read independently. State the overload or policy being described. Optional overloads can be added later as explicit variants.
+
+Deprecated pipeable forms must identify the import path and their current counterpart. An extra public alias without its own source file may have a separate seven-field block inside the owning card; link directly to that alias heading from the index.
 
 ## Notation agreement
 

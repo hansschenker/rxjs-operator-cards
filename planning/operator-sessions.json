@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "title": "RxJS operator-card sessions",
   "timezone": "Europe/Zurich",
   "sessionSize": 15,
@@ -15,7 +15,8 @@
       "entryPoint": "rxjs/operators",
       "cardOperator": "onErrorResumeNextWith",
       "session": 6,
-      "deprecated": true
+      "deprecated": true,
+      "compactNotation": true
     }
   ],
   "excludedHelperFiles": [
@@ -63,6 +64,24 @@
         "exhaustMap",
         "shareReplay",
         "startWith"
+      ],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "map",
+        "filter",
+        "scan",
+        "reduce",
+        "take",
+        "takeUntil",
+        "buffer",
+        "window",
+        "debounceTime",
+        "mergeMap",
+        "concatMap",
+        "switchMap",
+        "exhaustMap",
+        "shareReplay",
+        "startWith"
       ]
     },
     {
@@ -87,7 +106,25 @@
         "distinctUntilChanged",
         "distinctUntilKeyChanged"
       ],
-      "completedOperators": []
+      "completedOperators": [],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "skip",
+        "takeLast",
+        "skipLast",
+        "takeWhile",
+        "skipWhile",
+        "skipUntil",
+        "first",
+        "last",
+        "single",
+        "elementAt",
+        "find",
+        "findIndex",
+        "distinct",
+        "distinctUntilChanged",
+        "distinctUntilKeyChanged"
+      ]
     },
     {
       "number": 3,
@@ -111,7 +148,25 @@
         "subscribeOn",
         "endWith"
       ],
-      "completedOperators": []
+      "completedOperators": [],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "debounce",
+        "throttle",
+        "throttleTime",
+        "audit",
+        "auditTime",
+        "sample",
+        "sampleTime",
+        "delay",
+        "delayWhen",
+        "timeout",
+        "timestamp",
+        "timeInterval",
+        "observeOn",
+        "subscribeOn",
+        "endWith"
+      ]
     },
     {
       "number": 4,
@@ -135,7 +190,25 @@
         "max",
         "sequenceEqual"
       ],
-      "completedOperators": []
+      "completedOperators": [],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "bufferCount",
+        "windowCount",
+        "bufferTime",
+        "windowTime",
+        "bufferToggle",
+        "windowToggle",
+        "bufferWhen",
+        "windowWhen",
+        "groupBy",
+        "pairwise",
+        "toArray",
+        "count",
+        "min",
+        "max",
+        "sequenceEqual"
+      ]
     },
     {
       "number": 5,
@@ -159,7 +232,25 @@
         "switchScan",
         "expand"
       ],
-      "completedOperators": []
+      "completedOperators": [],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "mergeAll",
+        "concatAll",
+        "switchAll",
+        "exhaustAll",
+        "mergeWith",
+        "concatWith",
+        "combineLatestWith",
+        "zipWith",
+        "withLatestFrom",
+        "raceWith",
+        "combineLatestAll",
+        "zipAll",
+        "mergeScan",
+        "switchScan",
+        "expand"
+      ]
     },
     {
       "number": 6,
@@ -183,7 +274,25 @@
         "share",
         "connect"
       ],
-      "completedOperators": []
+      "completedOperators": [],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "every",
+        "isEmpty",
+        "defaultIfEmpty",
+        "throwIfEmpty",
+        "ignoreElements",
+        "materialize",
+        "dematerialize",
+        "catchError",
+        "onErrorResumeNextWith",
+        "retry",
+        "repeat",
+        "tap",
+        "finalize",
+        "share",
+        "connect"
+      ]
     },
     {
       "number": 7,
@@ -207,7 +316,25 @@
         "partition",
         "timeoutWith"
       ],
-      "completedOperators": []
+      "completedOperators": [],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "mapTo",
+        "pluck",
+        "flatMap",
+        "concatMapTo",
+        "mergeMapTo",
+        "switchMapTo",
+        "combineAll",
+        "exhaust",
+        "combineLatest",
+        "concat",
+        "merge",
+        "race",
+        "zip",
+        "partition",
+        "timeoutWith"
+      ]
     },
     {
       "number": 8,
@@ -224,7 +351,27 @@
         "repeatWhen",
         "retryWhen"
       ],
-      "completedOperators": []
+      "completedOperators": [],
+      "compactStatus": "complete",
+      "compactOperators": [
+        "multicast",
+        "publish",
+        "publishBehavior",
+        "publishLast",
+        "publishReplay",
+        "refCount",
+        "repeatWhen",
+        "retryWhen"
+      ]
     }
-  ]
+  ],
+  "compactNotationUpdated": "2026-11-24",
+  "compactNotationStatus": "complete",
+  "compactOperatorCount": 113,
+  "detailedOperatorCount": 15,
+  "progressDefinitions": {
+    "compactOperators": "Operators with a scoped seven-field compact notation card.",
+    "completedOperators": "Operators with the full detailed card, reviewed trace, and honest validation record.",
+    "status": "Progress of detailed expansion; compact coverage has its own status."
+  }
 }
